@@ -9,8 +9,8 @@
 
 int init_buttons(startmenu_t *startmenu)
 {
-    sfVector2f pos = {830, 580};
-    sfVector2f pos_2 = {830, 720};
+    sfVector2f pos = {830, 680};
+    sfVector2f pos_2 = {830, 820};
     sfVector2f scale = {0.7, 0.7};
 
     startmenu->quit_sprite = sfSprite_create();
@@ -35,6 +35,7 @@ int init_startmenu(utils_t *utils, startmenu_t *startmenu)
     sfVector2f scale = {0.6, 0.6};
 
     init_buttons(startmenu);
+    init_highlight(startmenu);
     startmenu->background_sprite = sfSprite_create();
     startmenu->background_texture = sfTexture_createFromFile
                             ("./utils/imgs/background_startmenu.png", NULL);

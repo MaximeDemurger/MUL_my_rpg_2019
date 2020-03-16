@@ -24,5 +24,8 @@ int open_window(utils_t *, game_t *);
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
 int init_startmenu(utils_t *utils, startmenu_t *startmenu);
+int init_highlight(startmenu_t *startmenu);
+int display_highlight_start(startmenu_t *startmenu, sfVector2i pos);
+int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos);
 
 #endif /* !PROTO */
