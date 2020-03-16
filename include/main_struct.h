@@ -18,14 +18,20 @@
 
 typedef struct game_s {
     struct utils_s *utils;
-}game_t;
+    struct startmenu_s *startmenu;
+} game_t;
+
+typedef struct startmenu_s {
+    sfSprite *background;
+} startmenu_t;
 
 typedef struct utils_s {
     sfRenderWindow *window;
     sfEvent event;
     bool pause;
     bool death;
+    bool in_start;
     int life;
-}utils_t;
+} utils_t;
 
 #endif /* !MAIN_STRUCT */
