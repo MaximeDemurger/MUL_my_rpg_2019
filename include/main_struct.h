@@ -22,7 +22,8 @@ typedef struct game_s {
 } game_t;
 
 typedef struct startmenu_s {
-    sfSprite *background;
+    sfSprite *background_sprite;
+    sfTexture *background_texture;
 } startmenu_t;
 
 typedef struct utils_s {
