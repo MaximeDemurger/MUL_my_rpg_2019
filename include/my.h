@@ -22,4 +22,8 @@
 void capture_events(utils_t *);
 int open_window(utils_t *, game_t *);
 
+/* start menu */
+int display_startmenu(utils_t *utils, startmenu_t *startmenu);
+int init_startmenu(utils_t *utils, startmenu_t *startmenu);
+
 #endif /* !PROTO */

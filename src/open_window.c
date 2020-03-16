@@ -7,12 +7,12 @@
 
 #include "my.h"
 
-void check_utils(utils_t *utils)
+void navigation_controller(utils_t *utils, game_t *game)
 {
     // if (utils->pause == true)
     //     pause_menu(utils, game->pause);
-    // if (utils->strt_menu == true)
-    //     starting_menu(utils, game->start);
+    if (utils->in_start == true)
+        display_startmenu(utils, game->startmenu);
     //     death_menu(utils, game->death);
     // if (utils->settings == true)
     //     settings_menu(utils, game->settings);
@@ -21,7 +21,7 @@ void check_utils(utils_t *utils)
 int open_window(utils_t *utils, game_t *game)
 {
     while (sfRenderWindow_isOpen(utils->window)) {
-        check_utils(utils);
+        navigation_controller(utils, game);
         capture_events(utils);
         if (utils->life <= 0) utils->death = true;
         sfRenderWindow_display(utils->window);

@@ -16,6 +16,9 @@ TESTS	= $(wildcard src/*.g*)
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\
 			src/capture_event.c 				\
+			src/start_menu/display.c 			\
+			src/start_menu/highlight.c           \
+			src/start_menu/init.c                \
 
 OBJS	= $(SRCS:.c=.o)
 
