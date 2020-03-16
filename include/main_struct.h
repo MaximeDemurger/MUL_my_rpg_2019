@@ -38,6 +38,7 @@ typedef struct utils_s {
     bool pause;
     bool death;
     bool in_start;
+    bool in_game;
     int life;
 } utils_t;
 

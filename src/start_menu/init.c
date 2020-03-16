@@ -30,7 +30,7 @@ int init_buttons(startmenu_t *startmenu)
     return (0);
 }
 
-int init_startmenu(utils_t *utils, startmenu_t *startmenu)
+int init_startmenu(startmenu_t *startmenu)
 {
     sfVector2f scale = {0.6, 0.6};
 
