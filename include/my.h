@@ -16,6 +16,7 @@
 #include <SFML/System/Types.h>
 #include <stdlib.h>
 #include "main_struct.h"
+#include "achivement.h"
 
 /* MAIN GAME */
 void capture_events(utils_t *);
