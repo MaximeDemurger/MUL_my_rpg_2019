@@ -14,6 +14,8 @@ void init_bis(achiv_t *achiv)
     achiv->p_killing = sfText_create();
     achiv->cross_text = sfTexture_createFromFile("assets/cross.png", NULL);
     achiv->tick_text = sfTexture_createFromFile("assets/tick.png", NULL);
+    achiv->back_text = sfTexture_createFromFile("assets/hudlayout.png", NULL);
+    achiv->back = sfSprite_create();
     achiv->tick = sfSprite_create();
     achiv->cross = sfSprite_create();
 }
@@ -23,15 +25,19 @@ int check_all(achiv_t *achiv)
     if (!achiv->p_golds || !achiv->p_keys || !achiv->p_killing ||
         !achiv->cross_text || !achiv->cross || !achiv->tick_text ||
         !achiv->tick || !achiv->font || !achiv->not_talked || !achiv->keys ||
-        !achiv->killing || !achiv->golds)
+        !achiv->killing || !achiv->golds || !achiv->back || !achiv->back_text)
         return 1;
     return 0;
 }
 
 void set_achivement(achiv_t *achiv)
 {
+    sfVector2f scale = {1.6, 1.2};
+
     sfSprite_setTexture(achiv->tick, achiv->tick_text, sfTrue);
     sfSprite_setTexture(achiv->cross, achiv->cross_text, sfTrue);
+    sfSprite_setTexture(achiv->back, achiv->back_text, sfTrue);
+    sfSprite_setScale(achiv->back, scale);
     sfText_setFont(achiv->not_talked, achiv->font);
     sfText_setFont(achiv->golds, achiv->font);
     sfText_setFont(achiv->killing, achiv->font);

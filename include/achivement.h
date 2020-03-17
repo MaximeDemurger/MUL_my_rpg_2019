@@ -34,6 +34,8 @@ typedef struct achivs_s {
     sfSprite *cross;
     sfTexture *tick_text;
     sfSprite *tick;
+    sfTexture *back_text;
+    sfSprite *back;
 }achiv_t;
 
 #endif /* !ACHIEVEMENT */

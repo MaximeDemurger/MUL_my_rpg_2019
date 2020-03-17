@@ -12,11 +12,13 @@ void not_talked(utils_t *utils, achiv_t *achiv)
     sfVector2f txt_pos = {50, 50};
 
     sfText_setPosition(achiv->not_talked, txt_pos);
+    sfRenderWindow_drawSprite(utils->window, achiv->back, NULL);
     sfRenderWindow_drawText(utils->window, achiv->not_talked, NULL);
 }
 
 void draw_talked(utils_t *utils, achiv_t *achiv)
 {
+    sfRenderWindow_drawSprite(utils->window, achiv->back, NULL);
     sfRenderWindow_drawText(utils->window, achiv->killing, NULL);
     sfRenderWindow_drawText(utils->window, achiv->keys, NULL);
     sfRenderWindow_drawText(utils->window, achiv->golds, NULL);
