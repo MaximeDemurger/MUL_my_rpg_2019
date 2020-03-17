@@ -8,7 +8,7 @@
 #include "my.h"
 #include <stdio.h>
 
-void navigation_controller(utils_t *utils, game_t *game)
+void navigation_controller(utils_t *utils, game_t *game, char **av)
 {
     // if (utils->pause == true)
     //     pause_menu(utils, game->pause);
@@ -25,10 +25,10 @@ void navigation_controller(utils_t *utils, game_t *game)
     //     settings_menu(utils, game->settings);
 }
 
-int open_window(utils_t *utils, game_t *game)
+int open_window(utils_t *utils, game_t *game, char **av)
 {
     while (sfRenderWindow_isOpen(utils->window)) {
-        navigation_controller(utils, game);
+        navigation_controller(utils, game, av);
         capture_events(utils);
         if (utils->life <= 0) utils->death = true;
         sfRenderWindow_display(utils->window);

@@ -32,6 +32,6 @@ int main(int ac, char **av)
     game->utils->window = sfRenderWindow_create(view_mode, "MY RPG",
                     sfResize | sfClose, NULL);
     sfRenderWindow_setFramerateLimit(game->utils->window, 30);
-    open_window(game->utils, game);
+    open_window(game->utils, game, av);
     return 0;
 }
