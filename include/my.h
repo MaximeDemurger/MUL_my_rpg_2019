@@ -16,11 +16,12 @@
 #include <SFML/System/Types.h>
 #include <stdlib.h>
 #include "main_struct.h"
+#include "map_struct.h"
 #include "achivement.h"
 
 /* MAIN GAME */
 void capture_events(utils_t *);
-int open_window(utils_t *, game_t *);
+int open_window(utils_t *, game_t *, char **);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
@@ -30,6 +31,9 @@ int display_highlight_start(startmenu_t *startmenu, sfVector2i pos);
 int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos);
 int go_to_game(utils_t *utils);
 void event_start_menu(utils_t *utils);
+
+/* MAP */
+int map_generator(char **av);
 
 /* pause menu */
 int init_pausemenu(game_t *game);
