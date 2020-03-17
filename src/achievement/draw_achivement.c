@@ -27,7 +27,7 @@ void draw_talked(utils_t *utils, achiv_t *achiv)
 
 void check_last_indic(utils_t *utils, achiv_t *achiv)
 {
-    sfVector2f pos3 = {200, 200};
+    sfVector2f pos3 = {300, 160};
 
     if (achiv->player_gold >= 30) {
         sfSprite_setPosition(achiv->tick, pos3);
@@ -40,12 +40,12 @@ void check_last_indic(utils_t *utils, achiv_t *achiv)
 
 void talked(utils_t *utils, achiv_t *achiv)
 {
-    sfVector2f kill_pos = {100, 50};
-    sfVector2f key_pos = {100, 100};
-    sfVector2f gold_pos = {100, 150};
-    sfVector2f p_kill_pos = {300, 50};
-    sfVector2f p_key_pos = {300, 100};
-    sfVector2f p_gold_pos = {300, 1500};
+    sfVector2f kill_pos = {50, 50};
+    sfVector2f key_pos = {50, 100};
+    sfVector2f gold_pos = {50, 150};
+    sfVector2f p_kill_pos = {260, 50};
+    sfVector2f p_key_pos = {200, 100};
+    sfVector2f p_gold_pos = {200, 150};
 
     sfText_setPosition(achiv->killing, kill_pos);
     sfText_setPosition(achiv->keys, key_pos);

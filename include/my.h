@@ -37,7 +37,7 @@ void talked(utils_t *, achiv_t *);
 void draw_indicators(utils_t *, achiv_t *);
 void not_talked(utils_t *, achiv_t *);
 void draw_talked(utils_t *, achiv_t *);
-void check_last_indicator(utils_t *, achiv_t *);
+void check_last_indic(utils_t *, achiv_t *);
 int init_achivement(achiv_t *);
 
 /* LIB FUNCTIONS */

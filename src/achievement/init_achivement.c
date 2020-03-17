@@ -60,9 +60,9 @@ int init_achivement(achiv_t *achiv)
 {
     achiv->png_talked = true;
     achiv->lvl_complet = false;
-    achiv->player_gold = 0;
-    achiv->player_keys = 0;
-    achiv->player_kills = 0;
+    achiv->player_gold = 35;
+    achiv->player_keys = 5;
+    achiv->player_kills = 6;
     achiv->font = sfFont_createFromFile("assets/police.otf");
     achiv->not_talked = sfText_create();
     achiv->killing = sfText_create();
