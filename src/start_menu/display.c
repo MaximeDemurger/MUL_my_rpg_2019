@@ -11,7 +11,6 @@ void event_start_menu(utils_t *utils)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(utils->window);
 
-    printf("%d, %d\n", pos.x, pos.y);
     if (utils->event.type == sfEvtMouseButtonPressed &&
             (pos.x >= 805 && pos.x <= 980)
             && (pos.y >= 637 && pos.y <= 726)) {
