@@ -9,7 +9,7 @@
 
 void not_talked(utils_t *utils, achiv_t *achiv)
 {
-    sfVector2f txt_pos = {100, 50};
+    sfVector2f txt_pos = {50, 50};
 
     sfText_setPosition(achiv->not_talked, txt_pos);
     sfRenderWindow_drawText(utils->window, achiv->not_talked, NULL);
