@@ -12,10 +12,11 @@ void navigation_controller(utils_t *utils, game_t *game)
 {
     // if (utils->pause == true)
     //     pause_menu(utils, game->pause);
-    if (utils->in_start == true)
+    if (utils->in_start == true) {
         display_startmenu(utils, game->startmenu);
+    }
     if (utils->in_game == true)
-        printf("mange tes morts\n");
+        draw_achivement(utils, game->achiv);
     //     death_menu(utils, game->death);
     // if (utils->settings == true)
     //     settings_menu(utils, game->settings);
@@ -27,7 +28,6 @@ int open_window(utils_t *utils, game_t *game)
         navigation_controller(utils, game);
         capture_events(utils);
         if (utils->life <= 0) utils->death = true;
-        draw_achivement(utils, game->achiv);
         sfRenderWindow_display(utils->window);
         sfRenderWindow_clear(utils->window, sfBlack);
     }
