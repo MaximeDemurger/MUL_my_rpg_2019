@@ -55,7 +55,7 @@ CFLAGS += -Wall -Wextra -Wno-deprecated
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
+	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -lm -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
 
 clean:
 	$(RM) $(OBJS)
