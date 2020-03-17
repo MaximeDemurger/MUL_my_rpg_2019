@@ -5,6 +5,7 @@
 ** init map
 */
 
+#include <stdio.h>
 #include "my.h"
 #include "map_struct.h"
 
@@ -17,10 +18,10 @@ void set_texture_map(map_t *map)
 
 int init_map(map_t *map, char **av)
 {
-    map = malloc(sizeof(map_t));
     map->grass_text = sfTexture_createFromFile("utils/imgs/grass.png", NULL);
     map->soil_text = sfTexture_createFromFile("utils/imgs/soil.jpg", NULL);
-    map->tower_pos_text = sfTexture_createFromFile("utils/imgs/tower_pos.png", NULL);
+    map->tower_pos_text = sfTexture_createFromFile("utils/imgs/tower_pos.jpg",
+                                                    NULL);
     map->grass = sfSprite_create();
     map->soil = sfSprite_create();
     map->tower_pos = sfSprite_create();
@@ -28,6 +29,6 @@ int init_map(map_t *map, char **av)
     !map->tower_pos_text || !map->soil_text || !map->grass_text)
         return 84;
     set_texture_map(map);
-    map_generator(av);
+    map->map_pars = map_generator();
     return 0;
 }

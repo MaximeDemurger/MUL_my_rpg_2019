@@ -27,7 +27,7 @@
 
 /* MAIN GAME */
 void capture_events(utils_t *);
-int open_window(utils_t *, game_t *, char **);
+int open_window(utils_t *, game_t *);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
@@ -39,9 +39,9 @@ int go_to_game(utils_t *utils);
 void event_start_menu(utils_t *utils);
 
 /* MAP */
-int map_generator(char **av);
-char **gettingMap_fromFile(char *filepath);
+char **map_generator(void);
 int init_map(map_t *map, char **av);
+void printing_map(game_t *game);
 
 /* pause menu */
 int init_pausemenu(game_t *game);
@@ -67,5 +67,6 @@ char *my_revstr(char *);
 int my_strlen(char const *);
 char *my_strdup(char const *str);
 char *get_next_line(int fd);
+char **my_str_to_word_array(char const *str, char separator);
 
 #endif /* !PROTO */

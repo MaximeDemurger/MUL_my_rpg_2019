@@ -7,11 +7,12 @@
 
 #include <stdlib.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include "my.h"
 
 char **gettingMap_fromFile(char *filepath)
 {
-    char **line = malloc(sizeof(char *) * 25);
+    char **line = malloc(sizeof(char *) * 26);
     char *str = NULL;
     int i = 0;
     int fd = 0;

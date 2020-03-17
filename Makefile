@@ -7,7 +7,7 @@
 
 NAME	= my_rpg
 
-CC	= gcc
+CC	= gcc -g
 
 RM	= rm -f
 
@@ -31,6 +31,7 @@ MY 	= 		src/my/convert.c 					\
 			src/my/get_next_line.c				\
 			src/my/my_revstr.c 					\
 			src/my/my_strlen.c 					\
+			src/my/my_str_to_word_array.c		\
 
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\

@@ -6,9 +6,7 @@
 */
 
 #include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include <zconf.h>
 #include "my.h"
 
 char *my_realloc(char *ptr, size_t size)
@@ -49,7 +47,7 @@ char get_char(const int fd)
 char *get_next_line(int fd)
 {
     char c = get_char(fd);
-    char *str = malloc(sizeof(char) *(READ_SIZE + 1));
+    char *str = malloc(sizeof(char) * (READ_SIZE + 1));
     int len = 0;
 
     if (str == NULL)

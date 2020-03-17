@@ -8,13 +8,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <unistd.h>
 #include "my.h"
-
-void check_case(map_t *map, utils_t *utils, sfVector2f pos)
-{
-    sfSprite_setPosition(map->tower_pos, pos);
-    sfRenderWindow_drawSprite(utils->window, map->tower_pos, NULL);
-}
 
 void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
 {
@@ -26,11 +21,13 @@ void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
         sfSprite_setPosition(map->soil, pos);
         sfRenderWindow_drawSprite(utils->window, map->soil, NULL);
     }
-    if (a == '1')
-        check_case(map, utils, pos);
+    if (a == '1') {
+        sfSprite_setPosition(map->tower_pos, pos);
+        sfRenderWindow_drawSprite(utils->window, map->tower_pos, NULL);
+    }
 }
 
-void printing_map(char **tab, game_t *game)
+void printing_map(game_t *game)
 {
     int col = 0;
     int line = 0;
@@ -38,11 +35,12 @@ void printing_map(char **tab, game_t *game)
     int y = 0;
     sfVector2f pos = {x, y};
 
-    while (tab[line] != NULL) {
+    while (line < 8) {
         col = 0;
         pos.x = 0;
-        while (tab[line][col] != '\0') {
-            check_charac(tab[line][col], game->utils, game->map, pos);
+        while (col < 16) {
+            check_charac(game->map->map_pars[line][col],
+                        game->utils, game->map, pos);
             pos.x += 128;
             col++;
         }

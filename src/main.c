@@ -12,6 +12,7 @@ int init_game(game_t *game)
     game->utils = malloc(sizeof(utils_t));
     game->startmenu = malloc(sizeof(startmenu_t));
     game->achiv = malloc(sizeof(achiv_t));
+    game->map = malloc(sizeof(map_t));
 
     if (!game->utils || !game->startmenu || !game->achiv)
         return 1;
@@ -32,6 +33,6 @@ int main(int ac, char **av)
     game->utils->window = sfRenderWindow_create(view_mode, "MY RPG",
                     sfResize | sfClose, NULL);
     sfRenderWindow_setFramerateLimit(game->utils->window, 30);
-    open_window(game->utils, game, av);
+    open_window(game->utils, game);
     return 0;
 }

@@ -9,36 +9,39 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include "my.h"
 
-void write_in_file(FILE *fd, int i, int *j, int random)
+char write_in_file(int i, int *j, int random)
 {
+    if (i == 1127) {
+        return '\0';
+    }
     if (i == *j) {
-        fwrite("\n", 1, 1, fd);
         *j += 47;
+        return '\n';
     } else if (random == 0)
-        fwrite("1", 1, 1, fd);
+        return '1';
     else if (random == 1)
-        fwrite("X", 1, 1, fd);
+        return 'O';
     else if (random == 2)
-        fwrite("O", 1, 1, fd);
+        return 'X';
 }
 
-
-int map_generator(char **av)
+char **map_generator(void)
 {
     int random = 0;
     int i = 0;
-    FILE *fd;
     int j = 46;
+    char **tab = NULL;
     char *map = malloc(sizeof(char) * 1128);
 
-    if (map == NULL || av[1] == NULL)
-        return 84;
-    fd = fopen(av[1], "w");
+    if (map == NULL)
+        return NULL;
     while (i < 1128) {
         random = rand() % 3;
-        write_in_file(fd, i, &j, random);
+        map[i] = write_in_file(i, &j, random);
         i++;
     }
-    return 0;
+    tab = my_str_to_word_array(map, '\n');
+    return tab;
 }
