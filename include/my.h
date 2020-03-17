@@ -15,9 +15,11 @@
 #include <SFML/Audio.h>
 #include <SFML/System/Types.h>
 #include <stdlib.h>
+#include <math.h>
 #include "main_struct.h"
 #include "map_struct.h"
 #include "achivement.h"
+#include "enemy.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -53,6 +55,11 @@ void not_talked(utils_t *, achiv_t *);
 void draw_talked(utils_t *, achiv_t *);
 void check_last_indic(utils_t *, achiv_t *);
 int init_achivement(achiv_t *);
+
+/* ENEMYS */
+void enemy_move(game_t *, enemy_t *, sfVector2f);
+void init_enemy(enemy_t **, size_t);
+void draw_enemys(utils_t *, enemy_t *);
 
 /* LIB FUNCTIONS */
 char *convert_to_string(int);

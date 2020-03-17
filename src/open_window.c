@@ -10,13 +10,17 @@
 
 void navigation_controller(utils_t *utils, game_t *game, char **av)
 {
+    game->ene = NULL;
+    init_enemy(&game->ene, 5);
     // if (utils->pause == true)
     //     pause_menu(utils, game->pause);
     if (utils->in_start == true) {
         display_startmenu(utils, game->startmenu);
     }
-    if (utils->in_game == true)
+    if (utils->in_game == true) {
+        draw_enemys(utils, game->ene);
         draw_achivement(utils, game->achiv);
+    }
     if (utils->in_pause == true) {
         display_pausemenu(game);
     }
