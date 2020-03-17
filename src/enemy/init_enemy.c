@@ -18,7 +18,7 @@ enemy_t *add_elem(enemy_t *elem)
     if (!tmp)
         return NULL;
     tmp->life = 100;
-    tmp->texture = sfTexture_createFromFile("assets/tick.png", NULL);
+    tmp->texture = sfTexture_createFromFile("assets/monstre.png", NULL);
     tmp->sprite = sfSprite_create();
     tmp->pos = offset;
     if (!tmp->texture || !tmp->sprite)
