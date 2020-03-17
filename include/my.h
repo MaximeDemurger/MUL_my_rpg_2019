@@ -26,4 +26,7 @@ int open_window(utils_t *, game_t *);
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
 int init_startmenu(utils_t *utils, startmenu_t *startmenu);
 
+/* LIB FUNCTIONS */
+char *convert_to_string(int);
+
 #endif /* !PROTO */

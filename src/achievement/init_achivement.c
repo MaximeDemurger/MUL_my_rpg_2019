@@ -12,9 +12,6 @@ void init_bis(achiv_t *achiv)
     achiv->p_golds = sfText_create();
     achiv->p_keys = sfText_create();
     achiv->p_killing = sfText_create();
-    achiv->t_golds = sfText_create();
-    achiv->t_keys = sfText_create();
-    achiv->t_killing = sfText_create();
     achiv->cross_text = sfTexture_createFromFile("assets/cross.png", NULL);
     achiv->tick_text = sfTexture_createFromFile("assets/tick.png", NULL);
     achiv->tick = sfSprite_create();
@@ -24,7 +21,6 @@ void init_bis(achiv_t *achiv)
 int check_all(achiv_t *achiv)
 {
     if (!achiv->p_golds || !achiv->p_keys || !achiv->p_killing ||
-        !achiv->t_golds || !achiv->t_keys || !achiv->t_killing ||
         !achiv->cross_text || !achiv->cross || !achiv->tick_text ||
         !achiv->tick || !achiv->font || !achiv->not_talked || !achiv->keys ||
         !achiv->killing || !achiv->golds)
@@ -36,14 +32,34 @@ void set_achivement(achiv_t *achiv)
 {
     sfSprite_setTexture(achiv->tick, achiv->tick_text, NULL);
     sfSprite_setTexture(achiv->cross, achiv->cross_text, NULL);
+    sfText_setFont(achiv->not_talked, achiv->font);
+    sfText_setFont(achiv->golds, achiv->font);
+    sfText_setFont(achiv->killing, achiv->font);
+    sfText_setFont(achiv->keys, achiv->font);
+    sfText_setFont(achiv->p_golds, achiv->font);
+    sfText_setFont(achiv->p_keys, achiv->font);
+    sfText_setFont(achiv->p_killing, achiv->font);
+}
+
+void init_txt(achiv_t *achiv)
+{
+    sfText_setCharacterSize(achiv->not_talked, 10);
+    sfText_setCharacterSize(achiv->killing, 10);
+    sfText_setCharacterSize(achiv->keys, 10);
+    sfText_setCharacterSize(achiv->golds, 10);
+    sfText_setCharacterSize(achiv->p_killing, 10);
+    sfText_setCharacterSize(achiv->p_keys, 10);
+    sfText_setCharacterSize(achiv->p_golds, 10);
+    sfText_setString(achiv->not_talked, "Talk to the PNJ to see achivements");
+    sfText_setString(achiv->killing, "Kill 5 monsters:");
+    sfText_setString(achiv->keys, "Find 3 keys:");
+    sfText_setString(achiv->golds, "Get 30 gold:");
 }
 
 int init_achivement(achiv_t *achiv)
 {
-    achiv->png_talked = false;
-    achiv->total_kills = 5;
-    achiv->total_keys = 3;
-    achiv->total_gold = 30;
+    achiv->png_talked = true;
+    achiv->lvl_complet = false;
     achiv->player_gold = 0;
     achiv->player_keys = 0;
     achiv->player_kills = 0;
@@ -56,5 +72,6 @@ int init_achivement(achiv_t *achiv)
     if (check_all(achiv))
         return 1;
     set_achivement(achiv);
+    init_txt(achiv);
     return 0;
 }

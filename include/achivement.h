@@ -17,21 +17,16 @@
 #include <stdbool.h>
 
 typedef struct achivs_s {
-    int total_kills;
-    int total_keys;
-    int total_gold;
     int player_kills;
     int player_keys;
     int player_gold;
     bool png_talked;
+    bool lvl_complet;
     sfFont *font;
     sfText *not_talked;
     sfText *killing;
     sfText *keys;
     sfText *golds;
-    sfText *t_killing;
-    sfText *t_keys;
-    sfText *t_golds;
     sfText *p_killing;
     sfText *p_keys;
     sfText *p_golds;
