@@ -17,6 +17,9 @@ void navigation_controller(utils_t *utils, game_t *game)
     }
     if (utils->in_game == true)
         draw_achivement(utils, game->achiv);
+    if (utils->in_pause == true) {
+        display_pausemenu(game);
+    }
     //     death_menu(utils, game->death);
     // if (utils->settings == true)
     //     settings_menu(utils, game->settings);

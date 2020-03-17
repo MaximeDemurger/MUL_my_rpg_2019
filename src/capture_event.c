@@ -13,7 +13,8 @@ void capture_events(utils_t *utils)
         if (utils->event.type == sfEvtClosed)
             sfRenderWindow_close(utils->window);
         if (utils->event.type == sfEvtKeyPressed &&
-            utils->event.key.code == sfKeyEscape)
-            utils->pause = true;
+            utils->event.key.code == sfKeyEscape &&
+            utils->in_game == true)
+            utils->in_pause = true;
     }
 }

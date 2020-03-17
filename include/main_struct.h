@@ -36,7 +36,7 @@ typedef struct startmenu_s {
 typedef struct utils_s {
     sfRenderWindow *window;
     sfEvent event;
-    bool pause;
+    bool in_pause;
     bool death;
     bool in_start;
     bool in_game;

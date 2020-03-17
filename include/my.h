@@ -31,6 +31,10 @@ int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos);
 int go_to_game(utils_t *utils);
 void event_start_menu(utils_t *utils);
 
+/* pause menu */
+int init_pausemenu(game_t *game);
+int display_pausemenu(game_t *game);
+
 /* ACHIVEMENTS */
 void draw_achivement(utils_t *, achiv_t *);
 void talked(utils_t *, achiv_t *);

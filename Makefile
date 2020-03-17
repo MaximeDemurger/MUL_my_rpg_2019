@@ -19,6 +19,9 @@ SRCS	= 	src/main.c 							\
 			src/start_menu/display.c 			\
 			src/start_menu/highlight.c          \
 			src/start_menu/init.c               \
+			src/pause_menu/display.c 			\
+			src/pause_menu/highlight.c          \
+			src/pause_menu/init.c               \
 			src/my/convert.c 					\
 			src/my/my_revstr.c 					\
 			src/my/my_strlen.c 					\
