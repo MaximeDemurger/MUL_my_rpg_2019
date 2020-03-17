@@ -10,8 +10,6 @@
 
 void navigation_controller(utils_t *utils, game_t *game, char **av)
 {
-    game->ene = NULL;
-    init_enemy(&game->ene, 5);
     // if (utils->pause == true)
     //     pause_menu(utils, game->pause);
     if (utils->in_start == true) {
@@ -32,6 +30,8 @@ void navigation_controller(utils_t *utils, game_t *game, char **av)
 int open_window(utils_t *utils, game_t *game, char **av)
 {
     //game->map->map_pars = gettingMap_fromFile(av[1]);
+    game->ene = NULL;
+    init_enemy(&game->ene, 5);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game, av);
         capture_events(utils);
