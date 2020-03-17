@@ -13,6 +13,11 @@ RM	= rm -f
 
 TESTS	= $(wildcard src/*.g*)
 
+MAP		= 	src/map/map_generator/map_generator.c	\
+			src/map/getting_map.c					\
+			src/map/init_map.c						\
+			src/map/print_map.c						\
+
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\
 			src/capture_event.c 				\
@@ -23,11 +28,14 @@ SRCS	= 	src/main.c 							\
 			src/pause_menu/highlight.c          \
 			src/pause_menu/init.c               \
 			src/my/convert.c 					\
+			src/my/my_strdup.c					\
+			src/my/get_next_line.c				\
 			src/my/my_revstr.c 					\
 			src/my/my_strlen.c 					\
 			src/achievement/draw_achivement.c 	\
 			src/achievement/draw_indicators.c 	\
 			src/achievement/init_achivement.c 	\
+			$(MAP)
 
 OBJS	= $(SRCS:.c=.o)
 

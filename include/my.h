@@ -19,6 +19,10 @@
 #include "map_struct.h"
 #include "achivement.h"
 
+#ifndef READ_SIZE
+#define READ_SIZE 4096
+#endif
+
 /* MAIN GAME */
 void capture_events(utils_t *);
 int open_window(utils_t *, game_t *, char **);
@@ -34,6 +38,8 @@ void event_start_menu(utils_t *utils);
 
 /* MAP */
 int map_generator(char **av);
+char **gettingMap_fromFile(char *filepath);
+int init_map(map_t *map, char **av);
 
 /* pause menu */
 int init_pausemenu(game_t *game);
@@ -52,5 +58,7 @@ int init_achivement(achiv_t *);
 char *convert_to_string(int);
 char *my_revstr(char *);
 int my_strlen(char const *);
+char *my_strdup(char const *str);
+char *get_next_line(int fd);
 
 #endif /* !PROTO */

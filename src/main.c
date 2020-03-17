@@ -27,7 +27,7 @@ int main(int ac, char **av)
     game_t *game = malloc(sizeof(game_t));
     sfVideoMode view_mode = {1920, 1080, 32};
 
-    if (init_game(game))
+    if (init_game(game) || init_map(game->map, av))
         return 84;
     game->utils->window = sfRenderWindow_create(view_mode, "MY RPG",
                     sfResize | sfClose, NULL);

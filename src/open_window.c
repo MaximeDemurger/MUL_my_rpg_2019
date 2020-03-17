@@ -27,6 +27,7 @@ void navigation_controller(utils_t *utils, game_t *game, char **av)
 
 int open_window(utils_t *utils, game_t *game, char **av)
 {
+    //game->map->map_pars = gettingMap_fromFile(av[1]);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game, av);
         capture_events(utils);
