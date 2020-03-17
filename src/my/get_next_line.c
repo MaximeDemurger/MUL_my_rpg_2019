@@ -6,7 +6,9 @@
 */
 
 #include <stdlib.h>
-#include <zconf.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include "my.h"
 
 char *my_realloc(char *ptr, size_t size)
