@@ -14,7 +14,7 @@ int init_game(game_t *game)
 
     if (!game->utils)
         return 1;
-    init_startmenu(game->utils, game->startmenu);
+    init_startmenu(game->startmenu);
     game->utils->in_start = true;
     return 0;
 }

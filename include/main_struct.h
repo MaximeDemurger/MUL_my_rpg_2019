@@ -28,6 +28,8 @@ typedef struct startmenu_s {
     sfTexture *start_texture;
     sfSprite *quit_sprite;
     sfTexture *quit_texture;
+    sfTexture *start_texture_highlight;
+    sfTexture *quit_texture_highlight;
 } startmenu_t;
 
 typedef struct utils_s {
@@ -36,6 +38,7 @@ typedef struct utils_s {
     bool pause;
     bool death;
     bool in_start;
+    bool in_game;
     int life;
 } utils_t;
 

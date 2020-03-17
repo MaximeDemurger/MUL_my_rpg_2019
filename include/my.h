@@ -24,7 +24,12 @@ int open_window(utils_t *, game_t *);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
-int init_startmenu(utils_t *utils, startmenu_t *startmenu);
+int init_startmenu(startmenu_t *startmenu);
+int init_highlight(startmenu_t *startmenu);
+int display_highlight_start(startmenu_t *startmenu, sfVector2i pos);
+int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos);
+int go_to_game(utils_t *utils);
+void event_start_menu(utils_t *utils);
 
 /* LIB FUNCTIONS */
 char *convert_to_string(int);
