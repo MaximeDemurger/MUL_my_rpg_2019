@@ -27,6 +27,7 @@ int open_window(utils_t *utils, game_t *game)
         navigation_controller(utils, game);
         capture_events(utils);
         if (utils->life <= 0) utils->death = true;
+        draw_achivement(utils, game->achiv);
         sfRenderWindow_display(utils->window);
         sfRenderWindow_clear(utils->window, sfBlack);
     }

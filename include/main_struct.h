@@ -19,6 +19,7 @@
 typedef struct game_s {
     struct utils_s *utils;
     struct startmenu_s *startmenu;
+    struct achivs_s *achiv;
 } game_t;
 
 typedef struct startmenu_s {

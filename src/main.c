@@ -11,10 +11,13 @@ int init_game(game_t *game)
 {
     game->utils = malloc(sizeof(utils_t));
     game->startmenu = malloc(sizeof(startmenu_t));
+    game->achiv = malloc(sizeof(achiv_t));
 
-    if (!game->utils)
+    if (!game->utils || !game->startmenu || !game->achiv)
         return 1;
     init_startmenu(game->startmenu);
+    if (init_achivement(game->achiv))
+        return 1;
     game->utils->in_start = true;
     return 0;
 }

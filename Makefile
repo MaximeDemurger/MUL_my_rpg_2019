@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-NAME	= my_defender
+NAME	= my_rpg
 
 CC	= gcc
 
@@ -20,6 +20,11 @@ SRCS	= 	src/main.c 							\
 			src/start_menu/highlight.c          \
 			src/start_menu/init.c               \
 			src/my/convert.c 					\
+			src/my/my_revstr.c 					\
+			src/my/my_strlen.c 					\
+			src/achievement/draw_achivement.c 	\
+			src/achievement/draw_indicators.c 	\
+			src/achievement/init_achivement.c 	\
 
 OBJS	= $(SRCS:.c=.o)
 

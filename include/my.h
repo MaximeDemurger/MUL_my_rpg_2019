@@ -31,7 +31,18 @@ int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos);
 int go_to_game(utils_t *utils);
 void event_start_menu(utils_t *utils);
 
+/* ACHIVEMENTS */
+void draw_achivement(utils_t *, achiv_t *);
+void talked(utils_t *, achiv_t *);
+void draw_indicators(utils_t *, achiv_t *);
+void not_talked(utils_t *, achiv_t *);
+void draw_talked(utils_t *, achiv_t *);
+void check_last_indicator(utils_t *, achiv_t *);
+int init_achivement(achiv_t *);
+
 /* LIB FUNCTIONS */
 char *convert_to_string(int);
+char *my_revstr(char *);
+int my_strlen(char const *);
 
 #endif /* !PROTO */
