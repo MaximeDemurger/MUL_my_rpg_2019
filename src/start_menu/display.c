@@ -11,12 +11,20 @@ void event_start_menu(utils_t *utils)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(utils->window);
 
+    printf("%d, %d\n", pos.x, pos.y);
     if (utils->event.type == sfEvtMouseButtonPressed &&
-            (pos.x >= 830 && pos.x <= 1006)
-            && (pos.y >= 609 && pos.y <= 691)) {
+            (pos.x >= 805 && pos.x <= 980)
+            && (pos.y >= 637 && pos.y <= 726)) {
         utils->in_start = false;
         utils->in_game = true;
         sfRenderWindow_clear(utils->window, sfBlack);
+    }
+    if (utils->event.type == sfEvtMouseButtonPressed &&
+            (pos.x >= 805 && pos.x <= 980)
+            && (pos.y >= 767 && pos.y <= 854)) {
+        utils->in_start = false;
+        utils->in_game = false;
+        sfRenderWindow_close(utils->window);
     }
 }
 
