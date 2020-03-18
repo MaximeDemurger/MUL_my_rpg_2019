@@ -11,6 +11,7 @@ int init_game(game_t *game, char **av)
 {
     game->utils = malloc(sizeof(utils_t));
     game->startmenu = malloc(sizeof(startmenu_t));
+    game->pausemenu = malloc(sizeof(pausemenu_t));
     game->achiv = malloc(sizeof(achiv_t));
     game->map = malloc(sizeof(map_t));
     game->play = malloc(sizeof(play_t));
@@ -19,6 +20,7 @@ int init_game(game_t *game, char **av)
         !game->play || !game->map)
         return 1;
     init_startmenu(game->startmenu);
+    init_pausemenu(game);
     if (init_achivement(game->achiv) || init_map(game->map, av) ||
         init_gameplay(game->play))
         return 1;
