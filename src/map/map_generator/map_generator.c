@@ -27,19 +27,18 @@ char write_in_file(int i, int *j, int random)
     return 0;
 }
 
+
 char **put_donjon(char **tab)
 {
-    int random_line;
-    int random_col;
-    int line = 0;
+    int random_line = (rand() % 3);
+    int random_col = (rand() % 3);
+    int line = random_line * 8 + 2;;
+    int secondline = line;
     int col = 0;
-    int secondline;
     int secondcol;
 
-    random_line = (rand() % 3);
-    random_col = (rand() % 3);
-    line = random_line * 8 + 2;
-    secondline = line;
+    if (random_col == 0 && random_line == 0)
+        random_col++;
     col = random_col * 16 + 5;
     secondcol = col;
     while (line < 4 + secondline) {
@@ -47,8 +46,7 @@ char **put_donjon(char **tab)
         while (col < 4 + secondcol) {
             if (line == random_line * 8 + 2 && col == random_col * 16 + 5)
                 tab[line][col - 1] = 'D'; 
-            tab[line][col] = 'D';
-            col++;
+            tab[line][col++] = 'D';
         }
         line++;
     }
