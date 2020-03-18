@@ -92,8 +92,6 @@ void print_minimap(game_t *game)
     int i = 0;
     int j = 0;
 
-    sfSprite_setPosition(game->map->mini_map, rec_map);
-    sfRenderWindow_drawSprite(game->utils->window, game->map->mini_map, NULL);
     while (game->map->map_pars[i]) {
         j = 0;
         mini_map.x = 185;
@@ -106,4 +104,6 @@ void print_minimap(game_t *game)
         mini_map.y += 35;
         i++;
     }
+    sfSprite_setPosition(game->map->mini_map, rec_map);
+    sfRenderWindow_drawSprite(game->utils->window, game->map->mini_map, NULL);
 }
