@@ -18,6 +18,7 @@ void navigation_controller(utils_t *utils, game_t *game)
         printing_map(game);
         draw_player(game->play, game->utils);
         draw_enemys(utils, game->ene);
+        draw_keys(utils, game->key);
         draw_achivement(utils, game->achiv);
         //mini_map(game);
     }
@@ -31,7 +32,9 @@ void navigation_controller(utils_t *utils, game_t *game)
 
 int open_window(utils_t *utils, game_t *game)
 {
+    game->key = NULL;
     game->ene = NULL;
+    init_keys(&game->key);
     init_enemy(&game->ene, 5);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);

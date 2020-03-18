@@ -68,6 +68,10 @@ void enemy_move(game_t *, enemy_t *, sfVector2f);
 void init_enemy(enemy_t **, size_t);
 void draw_enemys(utils_t *, enemy_t *);
 
+/* KEYS */
+void init_keys(keys_t **);
+void draw_keys(utils_t *, keys_t *);
+
 /* LIB FUNCTIONS */
 char *convert_to_string(int);
 char *my_revstr(char *);
