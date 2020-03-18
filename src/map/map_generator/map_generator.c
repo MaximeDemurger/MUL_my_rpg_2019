@@ -24,6 +24,7 @@ char write_in_file(int i, int *j, int random)
         return 'O';
     else if (random == 2)
         return 'X';
+    return 0;
 }
 
 char **map_generator(void)

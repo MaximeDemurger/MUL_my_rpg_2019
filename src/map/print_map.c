@@ -26,6 +26,7 @@ int check_map(play_t *play)
         play->y_play = 980;
         play->line_map -= 8;
     }
+    return 0;
 }
 
 void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)

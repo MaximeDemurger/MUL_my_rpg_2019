@@ -18,4 +18,5 @@ int init_gameplay(play_t *play)
     if (!play->player || !play->player_text)
         return 84;
     sfSprite_setTexture(play->player, play->player_text, sfTrue);
+    return 0;
 }
