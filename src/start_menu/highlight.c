@@ -18,7 +18,7 @@ int init_highlight(startmenu_t *startmenu)
 
 int display_highlight_start(startmenu_t *startmenu, sfVector2i pos)
 {
-    if ((pos.x >= 805 && pos.x <= 980) && (pos.y >= 637 && pos.y <= 726)) {
+    if ((pos.x >= 830 && pos.x <= 1006) && (pos.y >= 683 && pos.y <= 774)) {
         sfSprite_setTexture(startmenu->start_sprite,
                             startmenu->start_texture_highlight, sfTrue);
     } else {
@@ -30,7 +30,7 @@ int display_highlight_start(startmenu_t *startmenu, sfVector2i pos)
 
 int display_highlight_quit(startmenu_t *startmenu, sfVector2i pos)
 {
-    if ((pos.x >= 805 && pos.x <= 980) && (pos.y >= 767 && pos.y <= 854)) {
+    if ((pos.x >= 830 && pos.x <= 1006) && (pos.y >= 823 && pos.y <= 916)) {
         sfSprite_setTexture(startmenu->quit_sprite,
                             startmenu->quit_texture_highlight, sfTrue);
     } else {

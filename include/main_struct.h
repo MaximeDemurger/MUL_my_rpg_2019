@@ -19,6 +19,7 @@
 typedef struct game_s {
     struct utils_s *utils;
     struct startmenu_s *startmenu;
+    struct pausemenu_s *pausemenu;
     struct achivs_s *achiv;
     struct map_s *map;
     struct enemys_s *ene;
@@ -37,6 +38,17 @@ typedef struct startmenu_s {
     sfTexture *start_texture_highlight;
     sfTexture *quit_texture_highlight;
 } startmenu_t;
+
+typedef struct pausemenu_s {
+    sfSprite *background_sprite;
+    sfSprite *start_sprite;
+    sfSprite *main_sprite;
+    sfTexture *main_texture;
+    sfSprite *quit_sprite;
+    sfTexture *start_texture_highlight;
+    sfTexture *quit_texture_highlight;
+    sfTexture *main_texture_highlight;
+} pausemenu_t;
 
 typedef struct utils_s {
     sfRenderWindow *window;
