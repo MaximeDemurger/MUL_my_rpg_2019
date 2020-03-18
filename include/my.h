@@ -20,6 +20,7 @@
 #include "map_struct.h"
 #include "achivement.h"
 #include "enemy.h"
+#include "keys.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096

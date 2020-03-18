@@ -22,6 +22,7 @@ typedef struct game_s {
     struct achivs_s *achiv;
     struct map_s *map;
     struct enemys_s *ene;
+    struct keys_s *key;
 } game_t;
 
 typedef struct startmenu_s {
