@@ -44,7 +44,7 @@ void event_start_menu(utils_t *utils);
 char **map_generator(void);
 int init_map(map_t *map, char **av);
 void printing_map(game_t *game);
-void mini_map(game_t *game);
+void print_minimap(game_t *game);
 
 /* GAME */
 void draw_player(play_t *play, utils_t *utils);

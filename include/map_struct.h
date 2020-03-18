@@ -13,6 +13,7 @@
 #include "SFML/System/Export.h"
 #include "SFML/System/Time.h"
 #include "SFML/System/Types.h"
+#include <stdbool.h>
 
 typedef struct map_s {
     sfTexture *grass_text;
@@ -23,7 +24,15 @@ typedef struct map_s {
     sfSprite *soil;
     sfTexture *mini_map_text;
     sfSprite *mini_map;
+    sfTexture *mini_soil_text;
+    sfSprite *mini_soil;
+    sfTexture *mini_grass_text;
+    sfSprite *mini_grass;
+    sfTexture *mini_tower_text;
+    sfSprite *mini_tower;
     char **map_pars;
+    bool open_map;
+    int wait_for_it;
 } map_t;
 
 
