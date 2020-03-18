@@ -34,7 +34,7 @@ int main(int ac, char **av)
     if (init_game(game, av))
         return 84;
     game->utils->window = sfRenderWindow_create(view_mode, "MY RPG",
-                    sfResize | sfClose, NULL);
+                    sfClose, NULL);
     sfRenderWindow_setFramerateLimit(game->utils->window, 30);
     open_window(game->utils, game);
     return 0;
