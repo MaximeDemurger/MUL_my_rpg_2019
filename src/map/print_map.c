@@ -43,6 +43,10 @@ void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
         sfSprite_setPosition(map->tower_pos, pos);
         sfRenderWindow_drawSprite(utils->window, map->tower_pos, NULL);
     }
+    if (a == 'D') {
+        sfSprite_setPosition(map->donjon, pos);
+        sfRenderWindow_drawSprite(utils->window, map->donjon, NULL);
+    }
 }
 
 void check_mini(char a, utils_t *utils, map_t *map, sfVector2f pos)
@@ -58,6 +62,10 @@ void check_mini(char a, utils_t *utils, map_t *map, sfVector2f pos)
     if (a == '1') {
         sfSprite_setPosition(map->mini_tower, pos);
         sfRenderWindow_drawSprite(utils->window, map->mini_tower, NULL);
+    }
+    if (a == 'D') {
+        sfSprite_setPosition(map->donjon_mini, pos);
+        sfRenderWindow_drawSprite(utils->window, map->donjon_mini, NULL);
     }
 }
 

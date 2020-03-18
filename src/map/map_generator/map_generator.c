@@ -27,6 +27,34 @@ char write_in_file(int i, int *j, int random)
     return 0;
 }
 
+char **put_donjon(char **tab)
+{
+    int random_line;
+    int random_col;
+    int line = 0;
+    int col = 0;
+    int secondline;
+    int secondcol;
+
+    random_line = (rand() % 3);
+    random_col = (rand() % 3);
+    line = random_line * 8 + 2;
+    secondline = line;
+    col = random_col * 16 + 5;
+    secondcol = col;
+    while (line < 4 + secondline) {
+        col = random_col * 16 + 5;
+        while (col < 4 + secondcol) {
+            if (line == random_line * 8 + 2 && col == random_col * 16 + 5)
+                tab[line][col - 1] = 'D'; 
+            tab[line][col] = 'D';
+            col++;
+        }
+        line++;
+    }
+    return tab;
+}
+
 char **map_generator(void)
 {
     int random = 0;
@@ -43,5 +71,6 @@ char **map_generator(void)
         i++;
     }
     tab = my_str_to_word_array(map, '\n');
+    tab = put_donjon(tab);
     return tab;
 }

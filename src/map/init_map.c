@@ -18,6 +18,8 @@ void set_texture_map(map_t *map)
     sfSprite_setTexture(map->mini_grass, map->mini_grass_text, sfTrue);
     sfSprite_setTexture(map->mini_soil, map->mini_soil_text, sfTrue);
     sfSprite_setTexture(map->mini_tower, map->mini_tower_text, sfTrue);
+    sfSprite_setTexture(map->donjon, map->donjon_text, sfTrue);
+    sfSprite_setTexture(map->donjon_mini, map->donjon_mini_text, sfTrue);
 }
 
 int init_minimap(map_t *map)
@@ -28,6 +30,8 @@ int init_minimap(map_t *map)
                                                     NULL);
     map->mini_map_text = sfTexture_createFromFile("utils/imgs/red_minimap.png",
                                                 NULL);
+    map->donjon_mini_text = sfTexture_createFromFile("utils/imgs/dungeon_mini.png", NULL);
+    map->donjon_mini = sfSprite_create();
     map->mini_map = sfSprite_create();
     map->mini_grass = sfSprite_create();
     map->mini_soil = sfSprite_create();
@@ -43,6 +47,8 @@ int init_map(map_t *map, char **av)
     map->grass = sfSprite_create();
     map->soil = sfSprite_create();
     map->tower_pos = sfSprite_create();
+    map->donjon_text = sfTexture_createFromFile("utils/imgs/dungeon.png", NULL);
+    map->donjon = sfSprite_create();
     init_minimap(map);
     if (!map->soil || !map->tower_pos || !map->grass ||
     !map->tower_pos_text || !map->soil_text || !map->grass_text ||

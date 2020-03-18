@@ -30,6 +30,10 @@ typedef struct map_s {
     sfSprite *mini_grass;
     sfTexture *mini_tower_text;
     sfSprite *mini_tower;
+    sfTexture *donjon_text;
+    sfSprite *donjon;
+    sfTexture *donjon_mini_text;
+    sfSprite *donjon_mini;
     char **map_pars;
     bool open_map;
     int wait_for_it;
