@@ -19,6 +19,9 @@ GAME	=	src/game/init_gameplay.c				\
 KEY 	=	src/keys/init_keys.c 					\
 			src/keys/draw_keys.c					\
 
+INVENTORY 	=	src/inventory/init_inventory.c 		\
+				src/inventory/draw_inventory.c 		\
+
 MAP		= 	src/map/map_generator/map_generator.c	\
 			src/map/getting_map.c					\
 			src/map/init_map.c						\
@@ -54,6 +57,7 @@ SRCS	= 	src/main.c 							\
 			$(ACHIVEMENT)						\
 			$(GAME)								\
 			$(KEY)								\
+			$(INVENTORY)						\
 
 OBJS	= $(SRCS:.c=.o)
 

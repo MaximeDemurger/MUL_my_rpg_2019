@@ -22,6 +22,7 @@
 #include "enemy.h"
 #include "keys.h"
 #include "play_struct.h"
+#include "inventory.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -71,6 +72,10 @@ void draw_enemys(utils_t *, enemy_t *);
 /* KEYS */
 void init_keys(keys_t **);
 void draw_keys(utils_t *, keys_t *);
+
+/* INVENTORY */
+int init_inventory(inv_t *);
+void draw_inventory(utils_t *, inv_t *, achiv_t *);
 
 /* LIB FUNCTIONS */
 char *convert_to_string(int);

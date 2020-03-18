@@ -24,6 +24,7 @@ void navigation_controller(utils_t *utils, game_t *game)
         enemy_move(game, game->ene, player_pos);
         draw_keys(utils, game->key);
         draw_achivement(utils, game->achiv);
+        draw_inventory(utils, game->inv, game->achiv);
         if (game->map->open_map == true)
             print_minimap(game);
     }
