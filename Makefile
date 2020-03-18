@@ -13,6 +13,9 @@ RM	= rm -f
 
 TESTS	= $(wildcard src/*.g*)
 
+GAME	=	src/game/init_gameplay.c				\
+			src/game/draw_player.c					\
+
 MAP		= 	src/map/map_generator/map_generator.c	\
 			src/map/getting_map.c					\
 			src/map/init_map.c						\
@@ -45,7 +48,8 @@ SRCS	= 	src/main.c 							\
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\
-			$(ACHIVEMENT)
+			$(ACHIVEMENT)						\
+			$(GAME)								\
 
 OBJS	= $(SRCS:.c=.o)
 

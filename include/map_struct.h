@@ -21,6 +21,8 @@ typedef struct map_s {
     sfSprite *tower_pos;
     sfSprite *grass;
     sfSprite *soil;
+    sfTexture *mini_map_text;
+    sfSprite *mini_map;
     char **map_pars;
 } map_t;
 

@@ -11,6 +11,23 @@
 #include <unistd.h>
 #include "my.h"
 
+int check_map(play_t *play)
+{
+    if (play->x_play == 1840) {
+        play->x_play = 20;
+        play->col_map += 16;
+    } else if (play->x_play == 0 && play->col_map > 16) {
+        play->x_play = 1820;
+        play->col_map -= 16;
+    } else if (play->y_play == 1010) {
+        play->y_play = 20;
+        play->line_map += 8;
+    } else if (play->y_play == -20 && play->line_map > 8) {
+        play->y_play = 980;
+        play->line_map -= 8;
+    }
+}
+
 void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
 {
     if (a == 'O') {
@@ -29,16 +46,18 @@ void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
 
 void printing_map(game_t *game)
 {
-    int col = 0;
-    int line = 0;
     int x = 0;
     int y = 0;
     sfVector2f pos = {x, y};
+    int col = 0;
+    int line = 0;
 
-    while (line < 8) {
-        col = 0;
+    check_map(game->play);
+    line = game->play->line_map;
+    while (line < 8 + game->play->line_map) {
+        col = game->play->col_map;
         pos.x = 0;
-        while (col < 16) {
+        while (col < 16 + game->play->col_map) {
             check_charac(game->map->map_pars[line][col],
                         game->utils, game->map, pos);
             pos.x += 128;

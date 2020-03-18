@@ -7,7 +7,19 @@
 
 #include "my.h"
 
-void capture_events(utils_t *utils)
+void move_player(play_t *play, utils_t *utils)
+{
+    if (utils->event.key.code == sfKeyRight)
+        play->x_play += 10;
+    else if (utils->event.key.code == sfKeyLeft)
+        play->x_play -= 10;
+    else if (utils->event.key.code == sfKeyDown)
+        play->y_play += 10;
+    else if (utils->event.key.code == sfKeyUp)
+        play->y_play -= 10;
+}
+
+void capture_events(utils_t *utils, game_t *game)
 {
     while (sfRenderWindow_pollEvent(utils->window, &utils->event)) {
         if (utils->event.type == sfEvtClosed)
@@ -16,5 +28,6 @@ void capture_events(utils_t *utils)
             utils->event.key.code == sfKeyEscape &&
             utils->in_game == true)
             utils->in_pause = true;
+        move_player(game->play, utils);
     }
 }

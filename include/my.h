@@ -20,13 +20,14 @@
 #include "map_struct.h"
 #include "achivement.h"
 #include "enemy.h"
+#include "play_struct.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
 #endif
 
 /* MAIN GAME */
-void capture_events(utils_t *);
+void capture_events(utils_t *, game_t *);
 int open_window(utils_t *, game_t *);
 
 /* start menu */
@@ -42,6 +43,11 @@ void event_start_menu(utils_t *utils);
 char **map_generator(void);
 int init_map(map_t *map, char **av);
 void printing_map(game_t *game);
+void mini_map(game_t *game);
+
+/* GAME */
+void draw_player(play_t *play, utils_t *utils);
+int init_gameplay(play_t *play);
 
 /* pause menu */
 int init_pausemenu(game_t *game);
