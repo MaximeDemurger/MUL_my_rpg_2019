@@ -13,9 +13,8 @@
 
 char write_in_file(int i, int *j, int random)
 {
-    if (i == 1151) {
+    if (i == 1151)
         return '\0';
-    }
     if (i == *j) {
         *j += 48;
         return '\n';

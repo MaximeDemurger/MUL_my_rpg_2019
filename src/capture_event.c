@@ -9,13 +9,17 @@
 
 void move_player(play_t *play, utils_t *utils)
 {
-    if (utils->event.key.code == sfKeyRight)
+    if (utils->event.key.code == sfKeyRight && play->x_play <= 1830 &&
+        play->col_map <= 32)
         play->x_play += 10;
-    else if (utils->event.key.code == sfKeyLeft)
+    else if (utils->event.key.code == sfKeyLeft && play->x_play >= 0 &&
+            play->col_map >= 0)
         play->x_play -= 10;
-    else if (utils->event.key.code == sfKeyDown)
+    else if (utils->event.key.code == sfKeyDown && play->y_play <= 1000 &&
+            play->line_map <= 16)
         play->y_play += 10;
-    else if (utils->event.key.code == sfKeyUp)
+    else if (utils->event.key.code == sfKeyUp && play->y_play >= 0 &&
+            play->line_map >= 0)
         play->y_play -= 10;
 }
 
