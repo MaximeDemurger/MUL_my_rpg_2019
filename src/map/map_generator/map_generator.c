@@ -13,11 +13,11 @@
 
 char write_in_file(int i, int *j, int random)
 {
-    if (i == 1127) {
+    if (i == 1151) {
         return '\0';
     }
     if (i == *j) {
-        *j += 47;
+        *j += 48;
         return '\n';
     } else if (random == 0)
         return '1';
@@ -31,13 +31,13 @@ char **map_generator(void)
 {
     int random = 0;
     int i = 0;
-    int j = 46;
+    int j = 47;
     char **tab = NULL;
-    char *map = malloc(sizeof(char) * 1128);
+    char *map = malloc(sizeof(char) * 1152);
 
     if (map == NULL)
         return NULL;
-    while (i < 1128) {
+    while (i < 1152) {
         random = rand() % 3;
         map[i] = write_in_file(i, &j, random);
         i++;

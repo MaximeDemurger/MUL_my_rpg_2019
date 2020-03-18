@@ -13,13 +13,13 @@
 
 int check_map(play_t *play)
 {
-    if (play->x_play == 1840) {
+    if (play->x_play == 1840 && play->col_map < 32) {
         play->x_play = 20;
         play->col_map += 16;
     } else if (play->x_play == 0 && play->col_map > 0) {
         play->x_play = 1820;
         play->col_map -= 16;
-    } else if (play->y_play == 1010) {
+    } else if (play->y_play == 1010 && play->line_map < 16) {
         play->y_play = 20;
         play->line_map += 8;
     } else if (play->y_play == -20 && play->line_map > 0) {
