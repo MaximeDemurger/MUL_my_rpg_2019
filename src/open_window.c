@@ -11,6 +11,9 @@
 
 void navigation_controller(utils_t *utils, game_t *game)
 {
+    sfVector2f player_pos = {(float)game->play->x_play,
+                            (float)game->play->y_play};
+
     if (utils->in_start == true) {
         display_startmenu(utils, game->startmenu);
     }
@@ -18,6 +21,7 @@ void navigation_controller(utils_t *utils, game_t *game)
         printing_map(game);
         draw_player(game->play, game->utils);
         draw_enemys(utils, game->ene);
+        enemy_move(game, game->ene, player_pos);
         draw_keys(utils, game->key);
         draw_achivement(utils, game->achiv);
         //mini_map(game);
