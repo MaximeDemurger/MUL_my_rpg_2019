@@ -72,6 +72,7 @@ void draw_enemys(utils_t *, enemy_t *);
 /* KEYS */
 void init_keys(keys_t **);
 void draw_keys(utils_t *, keys_t *);
+void pick_up_keys(keys_t **, sfVector2f, achiv_t *);
 
 /* INVENTORY */
 int init_inventory(inv_t *);

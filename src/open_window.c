@@ -23,6 +23,7 @@ void navigation_controller(utils_t *utils, game_t *game)
         draw_enemys(utils, game->ene);
         enemy_move(game, game->ene, player_pos);
         draw_keys(utils, game->key);
+        pick_up_keys(&game->key, player_pos, game->achiv);
         draw_achivement(utils, game->achiv);
         draw_inventory(utils, game->inv, game->achiv);
         if (game->map->open_map == true)

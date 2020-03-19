@@ -18,6 +18,7 @@ GAME	=	src/game/init_gameplay.c				\
 
 KEY 	=	src/keys/init_keys.c 					\
 			src/keys/draw_keys.c					\
+			src/keys/pick_up_keys.c 				\
 
 INVENTORY 	=	src/inventory/init_inventory.c 		\
 				src/inventory/draw_inventory.c 		\
