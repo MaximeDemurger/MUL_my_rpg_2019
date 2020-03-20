@@ -42,7 +42,7 @@ int open_window(utils_t *utils, game_t *game)
     game->key = NULL;
     game->ene = NULL;
     init_keys(&game->key);
-    init_enemy(&game->ene, 5);
+    init_enemy(&game->ene, rand() % 4);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);
         capture_events(utils, game);

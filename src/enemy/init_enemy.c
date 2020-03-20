@@ -36,6 +36,8 @@ void init_enemy(enemy_t **ene, size_t nb)
 {
     size_t i = 0;
 
+    if (*ene)
+        *ene = NULL;
     while (i < nb) {
         (*ene) = add_elem(*ene);
         i++;

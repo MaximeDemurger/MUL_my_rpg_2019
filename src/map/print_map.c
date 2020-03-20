@@ -11,20 +11,28 @@
 #include <unistd.h>
 #include "my.h"
 
-int check_map(play_t *play)
+int check_map(play_t *play, keys_t *keys, enemy_t *ene)
 {
     if (play->x_play == 1840 && play->col_map < 32) {
         play->x_play = 20;
         play->col_map += 16;
+        init_keys(&keys);
+        init_enemy(&ene, rand() % 4);
     } else if (play->x_play == 0 && play->col_map > 0) {
         play->x_play = 1820;
         play->col_map -= 16;
+        init_keys(&keys);
+        init_enemy(&ene, rand() % 4);
     } else if (play->y_play == 1010 && play->line_map < 16) {
         play->y_play = 20;
         play->line_map += 8;
+        init_keys(&keys);
+        init_enemy(&ene, rand() % 4);
     } else if (play->y_play == -20 && play->line_map > 0) {
         play->y_play = 980;
         play->line_map -= 8;
+        init_keys(&keys);
+        init_enemy(&ene, rand() % 4);
     }
     return 0;
 }
@@ -77,7 +85,7 @@ void printing_map(game_t *game)
     int col = 0;
     int line = 0;
 
-    check_map(game->play);
+    check_map(game->play, game->key, game->ene);
     line = game->play->line_map;
     while (line < 8 + game->play->line_map) {
         col = game->play->col_map;

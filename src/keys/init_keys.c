@@ -33,6 +33,8 @@ void init_keys(keys_t **key)
     int keys = 0;
     int index = 0;
 
+    if (*key)
+        *key = NULL;
     if (num == 1 || num == 5 || num == 9)
         keys = 1;
     if (num == 7)
