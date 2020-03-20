@@ -22,7 +22,7 @@ int check_map(play_t *play)
     } else if (play->y_play == 1010 && play->line_map < 16) {
         play->y_play = 20;
         play->line_map += 8;
-    } else if (play->y_play == -20 && play->line_map > 0) {
+    } else if (play->y_play == -10 && play->line_map > 0) {
         play->y_play = 980;
         play->line_map -= 8;
     }
