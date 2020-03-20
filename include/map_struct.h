@@ -34,9 +34,15 @@ typedef struct map_s {
     sfSprite *donjon;
     sfTexture *donjon_mini_text;
     sfSprite *donjon_mini;
+    sfTexture *stairs_text;
+    sfSprite *stairs;
+    sfTexture *mini_stairs_text;
+    sfSprite *mini_stairs;
     char **map_pars;
     bool open_map;
     int wait_for_it;
+    int map_pos_line;
+    int map_pos_col;
 } map_t;
 
 

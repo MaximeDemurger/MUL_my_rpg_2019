@@ -45,7 +45,7 @@ char **put_donjon(char **tab)
         col = random_col * 16 + 5;
         while (col < 4 + secondcol) {
             if (line == random_line * 8 + 2 && col == random_col * 16 + 5)
-                tab[line][col - 1] = 'D'; 
+                tab[line][col - 1] = 'S'; 
             tab[line][col++] = 'D';
         }
         line++;

@@ -13,6 +13,8 @@ RM	= rm -f
 
 TESTS	= $(wildcard src/*.g*)
 
+DUNGEON =	src/dungeon/get_path.c					\
+
 GAME	=	src/game/init_gameplay.c				\
 			src/game/draw_player.c					\
 
@@ -59,6 +61,7 @@ SRCS	= 	src/main.c 							\
 			$(GAME)								\
 			$(KEY)								\
 			$(INVENTORY)						\
+			$(DUNGEON)							\
 
 OBJS	= $(SRCS:.c=.o)
 
