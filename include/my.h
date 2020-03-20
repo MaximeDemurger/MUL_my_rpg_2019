@@ -23,6 +23,7 @@
 #include "keys.h"
 #include "play_struct.h"
 #include "inventory.h"
+#include "dungeon.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -43,12 +44,13 @@ void event_start_menu(utils_t *utils);
 
 /* MAP */
 char **map_generator(void);
-int init_map(map_t *map, char **av);
+int init_map(map_t *map);
 void printing_map(game_t *game);
 void print_minimap(game_t *game);
 
 /* GAME */
-void draw_player(play_t *play, utils_t *utils);
+void draw_player(play_t *play, utils_t *utils, game_t *game);
+int get_path(char **tab, map_t *map);
 int init_gameplay(play_t *play);
 
 /* pause menu */
@@ -72,7 +74,6 @@ void draw_enemys(utils_t *, enemy_t *);
 /* KEYS */
 void init_keys(keys_t **);
 void draw_keys(utils_t *, keys_t *);
-void pick_up_keys(keys_t **, sfVector2f, achiv_t *);
 
 /* INVENTORY */
 int init_inventory(inv_t *);

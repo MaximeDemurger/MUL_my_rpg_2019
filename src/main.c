@@ -16,13 +16,14 @@ int init_game(game_t *game, char **av)
     game->map = malloc(sizeof(map_t));
     game->play = malloc(sizeof(play_t));
     game->inv = malloc(sizeof(inv_t));
+    game->path = malloc(sizeof(path_t));
 
     if (!game->utils || !game->startmenu || !game->achiv ||
-        !game->play || !game->map || !game->inv)
+        !game->play || !game->map || !game->inv || !game->path)
         return 1;
     init_startmenu(game->startmenu);
     init_pausemenu(game);
-    if (init_achivement(game->achiv) || init_map(game->map, av) ||
+    if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv))
         return 1;
     game->utils->in_start = true;

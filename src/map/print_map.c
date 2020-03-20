@@ -29,23 +29,26 @@ int check_map(play_t *play)
     return 0;
 }
 
-void check_charac(char a, utils_t *utils, map_t *map, sfVector2f pos)
+void check_charac(char a, utils_t *utils, game_t *game, sfVector2f pos)
 {
     if (a == 'O') {
-        sfSprite_setPosition(map->grass, pos);
-        sfRenderWindow_drawSprite(utils->window, map->grass, NULL);
+        sfSprite_setPosition(game->map->grass, pos);
+        sfRenderWindow_drawSprite(game->utils->window, game->map->grass, NULL);
     }
     if (a == 'X') {
-        sfSprite_setPosition(map->soil, pos);
-        sfRenderWindow_drawSprite(utils->window, map->soil, NULL);
+        sfSprite_setPosition(game->map->soil, pos);
+        sfRenderWindow_drawSprite(utils->window, game->map->soil, NULL);
     }
     if (a == '1') {
-        sfSprite_setPosition(map->tower_pos, pos);
-        sfRenderWindow_drawSprite(utils->window, map->tower_pos, NULL);
+        sfSprite_setPosition(game->map->tower_pos, pos);
+        sfRenderWindow_drawSprite(utils->window, game->map->tower_pos, NULL);
     }
     if (a == 'D') {
-        sfSprite_setPosition(map->donjon, pos);
-        sfRenderWindow_drawSprite(utils->window, map->donjon, NULL);
+        sfSprite_setPosition(game->map->donjon, pos);
+        sfRenderWindow_drawSprite(utils->window, game->map->donjon, NULL);
+    } if (a == 'S') {
+        sfSprite_setPosition(game->map->stairs, pos);
+        sfRenderWindow_drawSprite(utils->window, game->map->stairs, NULL);
     }
 }
 
@@ -66,6 +69,9 @@ void check_mini(char a, utils_t *utils, map_t *map, sfVector2f pos)
     if (a == 'D') {
         sfSprite_setPosition(map->donjon_mini, pos);
         sfRenderWindow_drawSprite(utils->window, map->donjon_mini, NULL);
+    } if (a == 'S') {
+        sfSprite_setPosition(map->mini_stairs, pos);
+        sfRenderWindow_drawSprite(utils->window, map->mini_stairs, NULL);
     }
 }
 
@@ -84,7 +90,7 @@ void printing_map(game_t *game)
         pos.x = 0;
         while (col < 16 + game->play->col_map) {
             check_charac(game->map->map_pars[line][col],
-                        game->utils, game->map, pos);
+                        game->utils, game, pos);
             pos.x += 128;
             col++;
         }
