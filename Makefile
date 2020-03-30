@@ -34,6 +34,10 @@ ENEMY 	= 	src/enemy/draw_enemys.c 	\
 			src/enemy/init_enemy.c 		\
 			src/enemy/move_enemy.c 		\
 
+ANCIENT = 	src/ancient/do_interaction.c 	\
+			src/ancient/draw_ancient.c 		\
+			src/ancient/init_ancient.c		\
+
 ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 				src/achievement/draw_indicators.c 	\
 				src/achievement/init_achivement.c 	\
@@ -62,6 +66,7 @@ SRCS	= 	src/main.c 							\
 			$(KEY)								\
 			$(INVENTORY)						\
 			$(DUNGEON)							\
+			$(ANCIENT)							\
 
 OBJS	= $(SRCS:.c=.o)
 

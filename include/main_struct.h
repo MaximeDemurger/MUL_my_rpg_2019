@@ -27,6 +27,7 @@ typedef struct game_s {
     struct play_s *play;
     struct inventory_s *inv;
     struct path_s *path;
+    struct pnj_s *pnj;
 } game_t;
 
 typedef struct startmenu_s {

@@ -56,7 +56,8 @@ void init_txt(achiv_t *achiv)
     sfText_setCharacterSize(achiv->p_killing, 30);
     sfText_setCharacterSize(achiv->p_keys, 30);
     sfText_setCharacterSize(achiv->p_golds, 30);
-    sfText_setString(achiv->not_talked, "Talk to the PNJ to see achivements");
+    sfText_setString(achiv->not_talked,
+    "Talk to the ancient to see achivements");
     sfText_setString(achiv->killing, "Kill 5 monsters:");
     sfText_setString(achiv->keys, "Find 3 keys:");
     sfText_setString(achiv->golds, "Get 30 gold:");

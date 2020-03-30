@@ -79,5 +79,12 @@ void capture_events(utils_t *utils, game_t *game)
         open_mini_map(game);
         move_player_x(game->play, utils, game->map);
         move_player_y(game->play, utils, game->map);
+        if (utils->event.type == sfEvtKeyPressed &&
+            utils->event.key.code == sfKeyE && game->pnj->in_range == true
+            && game->pnj->is_talking == false)
+            game->pnj->is_talking = true;
+        if (utils->event.type == sfEvtKeyPressed &&
+            utils->event.key.code == sfKeyN && game->pnj->is_talking == true)
+            game->pnj->index += 1;
     }
 }
