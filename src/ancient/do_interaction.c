@@ -17,6 +17,20 @@ int player_in_range(pnj_t *pnj, play_t *play)
     return 0;
 }
 
+void interactions(utils_t *utils, pnj_t *pnj, play_t *play, sfText *interact)
+{
+    if (pnj->is_talking == true) {
+        sfText_setString(interact, "Press N to see more");
+        sfText_setString(pnj->text, pnj->dialog[pnj->index]);
+        sfRenderWindow_drawText(utils->window, interact, NULL);
+        sfRenderWindow_drawText(utils->window, pnj->text, NULL);
+    }
+    if (pnj->index >= 7) {
+        pnj->is_talking = false;
+        pnj->index = 0;
+    }
+}
+
 void do_interaction(utils_t *utils, pnj_t *pnj, play_t *play)
 {
     sfText *interact = sfText_create();
@@ -35,14 +49,5 @@ void do_interaction(utils_t *utils, pnj_t *pnj, play_t *play)
         sfText_setString(interact, "Press E to talk to the ancient");
         sfRenderWindow_drawText(utils->window, interact, NULL);
     }
-    if (pnj->is_talking == true) {
-        sfText_setString(interact, "Press N to see more");
-        sfText_setString(pnj->text, pnj->dialog[pnj->index]);
-        sfRenderWindow_drawText(utils->window, interact, NULL);
-        sfRenderWindow_drawText(utils->window, pnj->text, NULL);
-    }
-    if (pnj->index >= 7) {
-        pnj->is_talking = false;
-        pnj->index = 0;
-    }
+    interactions(utils, pnj, play, interact);
 }
