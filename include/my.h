@@ -83,7 +83,7 @@ void draw_inventory(utils_t *, inv_t *, achiv_t *);
 /* ANCIENT */
 int init_ancient(pnj_t *);
 void draw_ancient(utils_t *, pnj_t *);
-void do_interaction(utils_t *, pnj_t *, play_t *);
+void do_interaction(utils_t *, game_t *);
 
 /* LIB FUNCTIONS */
 char *convert_to_string(int);

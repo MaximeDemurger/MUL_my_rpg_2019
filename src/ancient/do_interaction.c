@@ -17,37 +17,39 @@ int player_in_range(pnj_t *pnj, play_t *play)
     return 0;
 }
 
-void interactions(utils_t *utils, pnj_t *pnj, play_t *play, sfText *interact)
+void interactions(utils_t *utils, game_t *game, sfText *interact)
 {
-    if (pnj->is_talking == true) {
+    if (game->pnj->is_talking == true) {
         sfText_setString(interact, "Press N to see more");
-        sfText_setString(pnj->text, pnj->dialog[pnj->index]);
+        sfText_setString(game->pnj->text, game->pnj->dialog[game->pnj->index]);
         sfRenderWindow_drawText(utils->window, interact, NULL);
-        sfRenderWindow_drawText(utils->window, pnj->text, NULL);
+        sfRenderWindow_drawText(utils->window, game->pnj->text, NULL);
     }
-    if (pnj->index >= 7) {
-        pnj->is_talking = false;
-        pnj->index = 0;
+    if (game->pnj->index >= 7) {
+        game->pnj->is_talking = false;
+        game->pnj->index = 0;
+        game->achiv->png_talked = true;
     }
 }
 
-void do_interaction(utils_t *utils, pnj_t *pnj, play_t *play)
+void do_interaction(utils_t *utils, game_t *game)
 {
     sfText *interact = sfText_create();
+    sfVector2f pos = {220, 400};
 
     if (!interact)
         return;
-    sfText_setFont(interact, pnj->font);
-    sfText_setPosition(interact, pnj->pos);
-    if (player_in_range(pnj, play))
-        pnj->in_range = true;
+    sfText_setFont(interact, game->pnj->font);
+    sfText_setPosition(interact, pos);
+    if (player_in_range(game->pnj, game->play))
+        game->pnj->in_range = true;
     else {
-        pnj->in_range = false;
-        pnj->is_talking = false;
+        game->pnj->in_range = false;
+        game->pnj->is_talking = false;
     }
-    if (pnj->in_range == true && pnj->is_talking == false) {
+    if (game->pnj->in_range == true && game->pnj->is_talking == false) {
         sfText_setString(interact, "Press E to talk to the ancient");
         sfRenderWindow_drawText(utils->window, interact, NULL);
     }
-    interactions(utils, pnj, play, interact);
+    interactions(utils, game, interact);
 }

@@ -15,6 +15,7 @@ void set_pnj(pnj_t *pnj)
     sfText_setFont(pnj->text, pnj->font);
     sfText_setCharacterSize(pnj->text, 25);
     sfText_setPosition(pnj->text, pos);
+    sfSprite_setRotation(pnj->sprite, 90);
 }
 
 int init_ancient(pnj_t *pnj)

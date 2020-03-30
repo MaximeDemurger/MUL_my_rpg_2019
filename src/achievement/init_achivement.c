@@ -32,12 +32,9 @@ int check_all(achiv_t *achiv)
 
 void set_achivement(achiv_t *achiv)
 {
-    sfVector2f scale = {1.6, 1.2};
-
     sfSprite_setTexture(achiv->tick, achiv->tick_text, sfTrue);
     sfSprite_setTexture(achiv->cross, achiv->cross_text, sfTrue);
     sfSprite_setTexture(achiv->back, achiv->back_text, sfTrue);
-    sfSprite_setScale(achiv->back, scale);
     sfText_setFont(achiv->not_talked, achiv->font);
     sfText_setFont(achiv->golds, achiv->font);
     sfText_setFont(achiv->killing, achiv->font);
