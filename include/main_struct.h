@@ -28,6 +28,7 @@ typedef struct game_s {
     struct inventory_s *inv;
     struct path_s *path;
     struct pnj_s *pnj;
+    struct select_s *select;
 } game_t;
 
 typedef struct startmenu_s {
@@ -59,6 +60,7 @@ typedef struct utils_s {
     bool death;
     bool in_start;
     bool in_game;
+    bool lvl_selection;
     int life;
 } utils_t;
 

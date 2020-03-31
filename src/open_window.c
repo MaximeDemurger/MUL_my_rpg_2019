@@ -16,6 +16,8 @@ void navigation_controller(utils_t *utils, game_t *game)
 
     if (utils->in_start == true)
         display_startmenu(utils, game->startmenu);
+    if (utils->lvl_selection == true)
+        display_selection(utils, game->select);
     if (utils->in_game == true) {
         printing_map(game);
         draw_player(game->play, game->utils, game);

@@ -18,15 +18,17 @@ int init_game(game_t *game, char **av)
     game->inv = malloc(sizeof(inv_t));
     game->path = malloc(sizeof(path_t));
     game->pnj = malloc(sizeof(pnj_t));
+    game->select = malloc(sizeof(select_t));
 
     if (!game->utils || !game->startmenu || !game->achiv || !game->pnj
-        || !game->play || !game->map || !game->inv || !game->path)
+        || !game->play || !game->map || !game->inv || !game->path ||
+        !game->select)
         return 1;
     init_startmenu(game->startmenu);
     init_pausemenu(game);
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
-        init_ancient(game->pnj))
+        init_ancient(game->pnj) || init_selection(game->select))
         return 1;
     game->utils->in_start = true;
     return 0;

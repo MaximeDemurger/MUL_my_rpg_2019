@@ -25,6 +25,7 @@
 #include "inventory.h"
 #include "dungeon.h"
 #include "ancient.h"
+#include "selection.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -33,6 +34,10 @@
 /* MAIN GAME */
 void capture_events(utils_t *, game_t *);
 int open_window(utils_t *, game_t *);
+
+/* SELECTION */
+void display_selection(utils_t *, select_t *);
+int init_selection(select_t *);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
@@ -75,6 +80,7 @@ void draw_enemys(utils_t *, enemy_t *);
 /* KEYS */
 void init_keys(keys_t **);
 void draw_keys(utils_t *, keys_t *);
+void pick_up_keys(keys_t **, sfVector2f, achiv_t *);
 
 /* INVENTORY */
 int init_inventory(inv_t *);
