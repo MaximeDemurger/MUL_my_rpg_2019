@@ -15,7 +15,7 @@ void event_start_menu(utils_t *utils)
             (pos.x >= 830 && pos.x <= 1006) &&
             (pos.y >= 683 && pos.y <= 774)) {
         utils->in_start = false;
-        utils->in_game = true;
+        utils->lvl_selection = true;
         sfRenderWindow_clear(utils->window, sfBlack);
     }
     if (utils->event.type == sfEvtMouseButtonPressed &&

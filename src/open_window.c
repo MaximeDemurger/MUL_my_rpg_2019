@@ -16,6 +16,8 @@ void navigation_controller(utils_t *utils, game_t *game)
 
     if (utils->in_start == true)
         display_startmenu(utils, game->startmenu);
+    if (utils->lvl_selection == true)
+        display_selection(utils, game->select);
     if (utils->in_game == true) {
         printing_map(game);
         draw_player(game->play, game->utils, game);
@@ -23,8 +25,10 @@ void navigation_controller(utils_t *utils, game_t *game)
         enemy_move(game, game->ene, player_pos);
         draw_keys(utils, game->key);
         pick_up_keys(&game->key, player_pos, game->achiv);
+        draw_ancient(utils, game->pnj);
         draw_achivement(utils, game->achiv);
         draw_inventory(utils, game->inv, game->achiv);
+        do_interaction(utils, game);
         if (game->map->open_map == true)
             print_minimap(game);
     }

@@ -10,7 +10,9 @@
 void not_talked(utils_t *utils, achiv_t *achiv)
 {
     sfVector2f txt_pos = {50, 50};
+    sfVector2f scale = {1.6, 0.7};
 
+    sfSprite_setScale(achiv->back, scale);
     sfText_setPosition(achiv->not_talked, txt_pos);
     sfRenderWindow_drawSprite(utils->window, achiv->back, NULL);
     sfRenderWindow_drawText(utils->window, achiv->not_talked, NULL);
@@ -48,6 +50,7 @@ void talked(utils_t *utils, achiv_t *achiv)
     sfVector2f p_kill_pos = {260, 50};
     sfVector2f p_key_pos = {200, 100};
     sfVector2f p_gold_pos = {200, 150};
+    sfVector2f scale = {1.2, 1.2};
 
     sfText_setPosition(achiv->killing, kill_pos);
     sfText_setPosition(achiv->keys, key_pos);
@@ -58,6 +61,7 @@ void talked(utils_t *utils, achiv_t *achiv)
     sfText_setPosition(achiv->p_golds, p_gold_pos);
     sfText_setPosition(achiv->p_killing, p_kill_pos);
     sfText_setPosition(achiv->p_keys, p_key_pos);
+    sfSprite_setScale(achiv->back, scale);
     draw_talked(utils, achiv);
     draw_indicators(utils, achiv);
 }
