@@ -42,12 +42,15 @@ int init_selection(select_t *select)
     select->credits = sfText_create();
     select->version = sfText_create();
     select->welcomming = sfText_create();
+    select->hoover = sfSprite_create();
+    select->hoover_text = sfTexture_createFromFile("assets/hoover.png", NULL);
     if (!select->back_text || !select->back || !select->lvls_text ||
         !select->lvls || !select->font || !select->credits || !select->version
-        || !select->welcomming)
+        || !select->welcomming || !select->hoover || !select->hoover_text)
         return 1;
     set_texts_select(select);
     sfSprite_setTexture(select->back, select->back_text, sfTrue);
     sfSprite_setTexture(select->lvls, select->lvls_text, sfTrue);
+    sfSprite_setTexture(select->hoover, select->hoover_text, sfTrue);
     return 0;
 }

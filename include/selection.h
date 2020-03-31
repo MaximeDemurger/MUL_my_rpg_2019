@@ -20,6 +20,8 @@ typedef struct select_s {
     sfTexture *back_text;
     sfSprite *lvls;
     sfTexture *lvls_text;
+    sfTexture *hoover_text;
+    sfSprite *hoover;
     sfText *welcomming;
     sfText *version;
     sfText *credits;
