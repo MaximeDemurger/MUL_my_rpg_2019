@@ -17,14 +17,12 @@ void move_rect(play_t *play)
 int movement_player_y(play_t *play, utils_t *utils)
 {
     if (sfKeyboard_isKeyPressed(sfKeyRight)) {
-        sfSprite_setOrigin(play->player, play->origin);
         sfSprite_setRotation(play->player, 90);
         move_rect_up(play);
         sfClock_restart(play->clock);
         play->x_play += 5;
     }
     if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
-        sfSprite_setOrigin(play->player, play->origin);
         sfSprite_setRotation(play->player, -90);
         move_rect_up(play);
         play->x_play -= 5;
@@ -36,14 +34,12 @@ int movement_player_y(play_t *play, utils_t *utils)
 int movement_player_x(play_t *play, utils_t *utils)
 {
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
-        sfSprite_setOrigin(play->player, play->origin);
         sfSprite_setRotation(play->player, 0);
         move_rect_up(play);
         play->y_play -= 5;
         sfClock_restart(play->clock);
     }
     if (sfKeyboard_isKeyPressed(sfKeyDown)) {
-        sfSprite_setOrigin(play->player, play->origin);
         sfSprite_setRotation(play->player, 180);
         move_rect_up(play);
         play->y_play += 5;
