@@ -87,4 +87,11 @@ char *my_strdup(char const *str);
 char *get_next_line(int fd);
 char **my_str_to_word_array(char const *str, char separator);
 
+/*player*/
+int player_move(play_t *play, utils_t *utils);
+int movement_player_x(play_t *play, utils_t *utils);
+int movement_player_y(play_t *play, utils_t *utils);
+void move_rect_down(play_t *play);
+void move_rect_up(play_t *play);
+
 #endif /* !PROTO */

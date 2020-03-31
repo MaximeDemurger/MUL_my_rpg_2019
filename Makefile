@@ -45,6 +45,9 @@ MY 	= 		src/my/convert.c 					\
 			src/my/my_strlen.c 					\
 			src/my/my_str_to_word_array.c		\
 
+PLAYER =	src/player/player_move.c 			\
+			src/player/move_rect.c 				\
+
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\
 			src/capture_event.c 				\
@@ -62,6 +65,7 @@ SRCS	= 	src/main.c 							\
 			$(KEY)								\
 			$(INVENTORY)						\
 			$(DUNGEON)							\
+			$(PLAYER)							\
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -71,7 +75,7 @@ CFLAGS += -Wall -Wextra -Wno-deprecated
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -lm -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
+	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -lm -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
 
 clean:
 	$(RM) $(OBJS)

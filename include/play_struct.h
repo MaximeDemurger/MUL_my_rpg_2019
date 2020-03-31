@@ -18,8 +18,12 @@
 typedef struct play_s {
     sfTexture *player_text;
     sfSprite *player;
+    sfVector2f origin;
     int x_play;
     int y_play;
+    sfClock *clock;
+    sfVector2f offset;
+    sfIntRect rect;
     int col_map;
     int line_map;
 } play_t;
