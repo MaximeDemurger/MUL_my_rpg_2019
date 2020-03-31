@@ -18,6 +18,8 @@
 typedef struct pnj_s {
     sfSprite *sprite;
     sfTexture *texture;
+    sfSprite *bulle;
+    sfTexture *bulle_text;
     sfVector2f pos;
     bool in_range;
     bool is_talking;
