@@ -40,15 +40,24 @@ void rotation(game_t *game, sfVector2f pos)
 {
     float y;
     sfVector2f origin = {75, 75};
+    sfVector2f pos_dung = {660, 130};
     double c = game->play->x_play - pos.x;
     double b = game->play->y_play - pos.y;
 
     if (game->play->x_play <= 810 && game->play->x_play >= 170 &&
         game->play->y_play <= 430) {
+        pos.x += 20;
+        pos.y += 20;
+        sfSprite_setPosition(game->pnj->not_enough, pos_dung);
+        sfRenderWindow_drawSprite(game->utils->window, game->pnj->not_enough, NULL);
+        sfSprite_setPosition(game->pnj->sprite_dung, pos);
         y = -atan2(c, b) * 180 / 3.14;
         sfSprite_setOrigin(game->pnj->sprite_dung, origin);
         sfSprite_setRotation(game->pnj->sprite_dung, y);
-    }
+        game->pnj->next_to = 1;
+    } else
+        game->pnj->next_to = 0;
+    
 }
 
 void check_charac(char a, utils_t *utils, game_t *game, sfVector2f pos)
@@ -69,11 +78,11 @@ void check_charac(char a, utils_t *utils, game_t *game, sfVector2f pos)
         sfSprite_setPosition(game->map->stairs, pos);
         sfRenderWindow_drawSprite(utils->window, game->map->stairs, NULL);
     } else if (a == 'E') {
-        rotation(game, pos);
         sfSprite_setPosition(game->map->grass, pos);
         sfRenderWindow_drawSprite(game->utils->window, game->map->grass, NULL);
         sfSprite_setPosition(game->pnj->sprite_dung, pos);
         sfRenderWindow_drawSprite(utils->window, game->pnj->sprite_dung, NULL);
+        rotation(game, pos);
     }
 }
 
@@ -122,8 +131,10 @@ void printing_map(game_t *game)
         pos.y += 135;
         line++;
     }
-    if (game->play->col_map == 0 && game->play->line_map == 0)
+    if (game->play->col_map == 0 && game->play->line_map == 0) {
         draw_ancient(game->utils, game->pnj);
+        do_interaction(game->utils, game);
+    }
 }
 
 void print_minimap(game_t *game)

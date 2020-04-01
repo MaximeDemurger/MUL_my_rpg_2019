@@ -15,6 +15,8 @@ void set_pnj(pnj_t *pnj)
     sfSprite_setTexture(pnj->sprite, pnj->texture, sfTrue);
     sfSprite_setTexture(pnj->bulle, pnj->bulle_text, sfTrue);
     sfSprite_setTexture(pnj->sprite_dung, pnj->texture_dung, sfTrue);
+    sfSprite_setTexture(pnj->not_enough, pnj->texture_not_enou, sfTrue);
+    sfSprite_setTexture(pnj->enter, pnj->texture_enter, sfTrue);
     sfSprite_setPosition(pnj->bulle, pos2);
     sfText_setFont(pnj->text, pnj->font);
     sfText_setCharacterSize(pnj->text, 25);
@@ -32,6 +34,12 @@ int init_dungeon_ancient(pnj_t *pnj)
     pnj->texture_dung = sfTexture_createFromFile("assets/pnj_dungeon.png",
                                                                     NULL);
     pnj->sprite_dung = sfSprite_create();
+    pnj->not_enough = sfSprite_create();
+    pnj->texture_not_enou = sfTexture_createFromFile("assets/not_enough.png",
+                                                                    NULL);
+    pnj->enter = sfSprite_create();
+    pnj->texture_enter = sfTexture_createFromFile("assets/enter_dungeon.png",
+                                                                    NULL);
 }
 
 int init_ancient(pnj_t *pnj)
