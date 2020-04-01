@@ -22,7 +22,6 @@ void draw_player(play_t *play, utils_t *utils, game_t *game)
 {
     sfVector2f player_pos = {play->x_play, play->y_play};
 
-    printf("%d %d\n", play->x_play, play->y_play);
     if (play->line_map == game->map->map_pos_line &&
         play->col_map == game->map->map_pos_col)
         check_dungeon(player_pos);

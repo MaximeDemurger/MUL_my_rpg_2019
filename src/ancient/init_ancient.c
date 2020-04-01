@@ -14,6 +14,7 @@ void set_pnj(pnj_t *pnj)
 
     sfSprite_setTexture(pnj->sprite, pnj->texture, sfTrue);
     sfSprite_setTexture(pnj->bulle, pnj->bulle_text, sfTrue);
+    sfSprite_setTexture(pnj->sprite_dung, pnj->texture_dung, sfTrue);
     sfSprite_setPosition(pnj->bulle, pos2);
     sfText_setFont(pnj->text, pnj->font);
     sfText_setCharacterSize(pnj->text, 25);
@@ -24,6 +25,13 @@ void set_pnj(pnj_t *pnj)
     pnj->is_talking = false;
     pnj->index = 0;
     pnj->dialog = malloc(sizeof(char *) * 7);
+}
+
+int init_dungeon_ancient(pnj_t *pnj)
+{
+    pnj->texture_dung = sfTexture_createFromFile("assets/pnj_dungeon.png",
+                                                                    NULL);
+    pnj->sprite_dung = sfSprite_create();
 }
 
 int init_ancient(pnj_t *pnj)
@@ -40,6 +48,7 @@ int init_ancient(pnj_t *pnj)
         || !pnj->bulle || !pnj->bulle_text)
         return 1;
     pnj->pos = pos;
+    init_dungeon_ancient(pnj);
     set_pnj(pnj);
     pnj->dialog[0] = "Welcome adventurer to your first quest in this world!";
     pnj->dialog[1] = "To complet this quest you will have to:";

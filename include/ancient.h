@@ -18,6 +18,8 @@
 typedef struct pnj_s {
     sfSprite *sprite;
     sfTexture *texture;
+    sfSprite *sprite_dung;
+    sfTexture *texture_dung;
     sfSprite *bulle;
     sfTexture *bulle_text;
     sfVector2f pos;
