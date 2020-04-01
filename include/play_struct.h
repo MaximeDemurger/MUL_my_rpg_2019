@@ -16,6 +16,7 @@
 #include <SFML/System/Types.h>
 
 typedef struct play_s {
+    int live;
     sfTexture *player_text;
     sfSprite *player;
     sfVector2f origin;
