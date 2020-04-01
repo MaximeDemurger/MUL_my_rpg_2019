@@ -20,12 +20,12 @@ int movement_player_y(play_t *play, utils_t *utils)
         sfSprite_setRotation(play->player, 90);
         move_rect_up(play);
         sfClock_restart(play->clock);
-        play->x_play += 5;
+        play->x_play += 10;
     }
     if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
         sfSprite_setRotation(play->player, -90);
         move_rect_up(play);
-        play->x_play -= 5;
+        play->x_play -= 10;
         sfClock_restart(play->clock);
     }
     return 0;
@@ -36,13 +36,13 @@ int movement_player_x(play_t *play, utils_t *utils)
     if (sfKeyboard_isKeyPressed(sfKeyUp)) {
         sfSprite_setRotation(play->player, 0);
         move_rect_up(play);
-        play->y_play -= 5;
+        play->y_play -= 10;
         sfClock_restart(play->clock);
     }
     if (sfKeyboard_isKeyPressed(sfKeyDown)) {
         sfSprite_setRotation(play->player, 180);
         move_rect_up(play);
-        play->y_play += 5;
+        play->y_play += 10;
         sfClock_restart(play->clock);
     }
     else {
@@ -61,6 +61,7 @@ int player_move(play_t *play, utils_t *utils)
     sfSprite_setScale(play->player, scale);
     sfRectangleShape *sfRectangleShape_create(void);
     sfSprite_setTextureRect(play->player, play->rect);
+    printf("%d %d\n", play->x_play, play->y_play);
     if (seconds > 0.001) {
         movement_player_x(play, utils);
     }

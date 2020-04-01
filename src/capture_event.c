@@ -51,5 +51,9 @@ void capture_events(utils_t *utils, game_t *game)
         if (utils->event.type == sfEvtKeyPressed &&
             utils->event.key.code == sfKeyN && game->pnj->is_talking == true)
             game->pnj->index += 1;
+        if (game->pnj->next_to == 1 && utils->event.key.code == sfKeyA) {
+            game->utils->in_dungeon = true;
+            game->utils->in_game = false;
+        }
     }
 }

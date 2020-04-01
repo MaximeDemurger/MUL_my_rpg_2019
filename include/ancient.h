@@ -18,6 +18,12 @@
 typedef struct pnj_s {
     sfSprite *sprite;
     sfTexture *texture;
+    sfSprite *sprite_dung;
+    sfTexture *texture_dung;
+    sfSprite *not_enough;
+    sfTexture *texture_not_enou;
+    sfSprite *enter;
+    sfTexture *texture_enter;
     sfSprite *bulle;
     sfTexture *bulle_text;
     sfVector2f pos;
@@ -27,6 +33,7 @@ typedef struct pnj_s {
     int index;
     sfFont *font;
     sfText *text;
+    int next_to;
 }pnj_t;
 
 #endif /* !ANCIENT */
