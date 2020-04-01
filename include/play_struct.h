@@ -15,6 +15,16 @@
 #include <SFML/Audio.h>
 #include <SFML/System/Types.h>
 
+typedef struct score_s {
+    sfVector2f pos;
+    float score;
+    sfIntRect rect;
+    sfText *live_text;
+    sfText *live_int;
+    sfFont *font;
+    sfText *score_text;
+}score_t;
+
 typedef struct play_s {
     int live;
     sfTexture *player_text;

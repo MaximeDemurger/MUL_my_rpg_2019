@@ -7,6 +7,23 @@
 
 #include "my.h"
 
+int init_game_next(game_t *game, char **av)
+{
+    if (!game->utils || !game->startmenu || !game->achiv || !game->pnj
+        || !game->play || !game->map || !game->inv || !game->path ||
+        !game->select || !game->score)
+        return 1;
+    init_startmenu(game->startmenu);
+    init_pausemenu(game);
+    if (init_achivement(game->achiv) || init_map(game->map) ||
+        init_gameplay(game->play) || init_inventory(game->inv) ||
+        init_ancient(game->pnj) || init_selection(game->select)
+        || score(game))
+        return 1;
+    game->utils->in_start = true;
+    return 0;
+}
+
 int init_game(game_t *game, char **av)
 {
     game->utils = malloc(sizeof(utils_t));
@@ -19,18 +36,9 @@ int init_game(game_t *game, char **av)
     game->path = malloc(sizeof(path_t));
     game->pnj = malloc(sizeof(pnj_t));
     game->select = malloc(sizeof(select_t));
-
-    if (!game->utils || !game->startmenu || !game->achiv || !game->pnj
-        || !game->play || !game->map || !game->inv || !game->path ||
-        !game->select)
+    game->score = malloc(sizeof(score_t));
+    if (init_game_next(game, av) == 1)
         return 1;
-    init_startmenu(game->startmenu);
-    init_pausemenu(game);
-    if (init_achivement(game->achiv) || init_map(game->map) ||
-        init_gameplay(game->play) || init_inventory(game->inv) ||
-        init_ancient(game->pnj) || init_selection(game->select))
-        return 1;
-    game->utils->in_start = true;
     return 0;
 }
 

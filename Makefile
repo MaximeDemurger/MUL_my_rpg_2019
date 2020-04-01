@@ -55,6 +55,10 @@ MY 	= 		src/my/convert.c 					\
 PLAYER =	src/player/player_move.c 			\
 			src/player/move_rect.c 				\
 
+SCORE = 	src/score_game/init_score_game.c	\
+			src/score_game/score.c				\
+			lib/convert_int_to_string.c \
+
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\
 			src/capture_event.c 				\
@@ -75,6 +79,7 @@ SRCS	= 	src/main.c 							\
 			$(PLAYER)							\
 			$(ANCIENT)							\
 			$(SELECTION)						\
+			$(SCORE)							\
 
 OBJS	= $(SRCS:.c=.o)
 

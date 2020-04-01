@@ -14,7 +14,11 @@
 #include <SFML/System/Time.h>
 #include <SFML/Audio.h>
 #include <SFML/System/Types.h>
+#include <stddef.h>
+#include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 #include <math.h>
 #include "main_struct.h"
 #include "map_struct.h"
@@ -30,6 +34,10 @@
 #ifndef READ_SIZE
 #define READ_SIZE 4096
 #endif
+
+/*lib*/
+char *my_itoa(int nb);
+int calc_int_len(int nb);
 
 /* MAIN GAME */
 void capture_events(utils_t *, game_t *);
@@ -105,5 +113,11 @@ int movement_player_x(play_t *play, utils_t *utils);
 int movement_player_y(play_t *play, utils_t *utils);
 void move_rect_down(play_t *play);
 void move_rect_up(play_t *play);
+
+/*score*/
+int init_score_game(game_t *game);
+int display_score(game_t *game);
+int score(game_t *game);
+int update_score(game_t *game);
 
 #endif /* !PROTO */
