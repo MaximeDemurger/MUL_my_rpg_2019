@@ -26,7 +26,7 @@ typedef struct score_s {
 }score_t;
 
 typedef struct play_s {
-    int live;
+    int life;
     sfTexture *player_text;
     sfSprite *player;
     sfVector2f origin;
