@@ -15,6 +15,7 @@ int init_game_next(game_t *game, char **av)
         return 1;
     init_startmenu(game->startmenu);
     init_pausemenu(game);
+    init_dungeon(game->dungeon);
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)
@@ -54,6 +55,7 @@ int main(int ac, char **av)
 
     if (init_game(game, av))
         return 84;
+    game->dungeon->all_achiv = 1;
     game->utils->window = sfRenderWindow_create(view_mode, "MY RPG",
                     sfClose, NULL);
     sfRenderWindow_setFramerateLimit(game->utils->window, 30);
