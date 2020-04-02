@@ -10,7 +10,7 @@
 int init_game_next(game_t *game, char **av)
 {
     if (!game->utils || !game->startmenu || !game->achiv || !game->pnj
-        || !game->play || !game->map || !game->inv || !game->path ||
+        || !game->play || !game->map || !game->inv || !game->dungeon ||
         !game->select || !game->score)
         return 1;
     init_startmenu(game->startmenu);
@@ -18,11 +18,13 @@ int init_game_next(game_t *game, char **av)
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)
-        || score(game) || get_high_scores(game->high))
+        || score(game) || get_high_scores(game->high) ||
+        init_dungeon(game->dungeon))
         return 1;
     game->utils->in_start = true;
     game->utils->width = 1920;
     game->utils->height = 1080;
+    game->dungeon->all_achiv = 1;
     return 0;
 }
 
@@ -35,7 +37,7 @@ int init_game(game_t *game, char **av)
     game->map = malloc(sizeof(map_t));
     game->play = malloc(sizeof(play_t));
     game->inv = malloc(sizeof(inv_t));
-    game->path = malloc(sizeof(path_t));
+    game->dungeon = malloc(sizeof(dungeon_t));
     game->pnj = malloc(sizeof(pnj_t));
     game->select = malloc(sizeof(select_t));
     game->score = malloc(sizeof(score_t));

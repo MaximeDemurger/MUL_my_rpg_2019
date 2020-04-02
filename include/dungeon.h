@@ -8,7 +8,10 @@
 #ifndef DUNGEON_H
 #define DUNGEON_H
 
-typedef struct path_s {
-} path_t;
+typedef struct dungeon_s {
+    sfSprite *ground;
+    sfTexture *text_ground;
+    int all_achiv;
+} dungeon_t;
 
 #endif /* !DUNGEON_H */
