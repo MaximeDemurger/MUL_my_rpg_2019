@@ -30,6 +30,7 @@ typedef struct game_s {
     struct pnj_s *pnj;
     struct select_s *select;
     struct score_s *score;
+    struct heigh_s *high;
 } game_t;
 
 typedef struct startmenu_s {
