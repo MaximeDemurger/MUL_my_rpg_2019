@@ -28,6 +28,7 @@ void navigation_controller(utils_t *utils, game_t *game)
         draw_achivement(utils, game->achiv);
         draw_inventory(utils, game->inv, game->achiv);
         display_score(game);
+        display_life(game->play, game->utils);
         if (game->map->open_map == true)
             print_minimap(game);
     }

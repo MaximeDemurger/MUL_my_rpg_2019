@@ -35,10 +35,6 @@
 #define READ_SIZE 4096
 #endif
 
-/*lib*/
-char *my_itoa(int nb);
-int calc_int_len(int nb);
-
 /* MAIN GAME */
 void capture_events(utils_t *, game_t *);
 int open_window(utils_t *, game_t *);
@@ -106,6 +102,8 @@ int my_strlen(char const *);
 char *my_strdup(char const *str);
 char *get_next_line(int fd);
 char **my_str_to_word_array(char const *str, char separator);
+char *my_itoa(int nb);
+int calc_int_len(int nb);
 
 /*player*/
 int player_move(play_t *play, utils_t *utils);
@@ -113,6 +111,7 @@ int movement_player_x(play_t *play, utils_t *utils);
 int movement_player_y(play_t *play, utils_t *utils);
 void move_rect_down(play_t *play);
 void move_rect_up(play_t *play);
+int display_life(play_t *play, utils_t *utils);
 
 /*score*/
 int init_score_game(game_t *game);

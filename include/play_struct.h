@@ -27,6 +27,16 @@ typedef struct score_s {
 
 typedef struct play_s {
     int life;
+    sfSprite *one;
+    sfSprite *two;
+    sfSprite *three;
+    sfSprite *four;
+    sfSprite *five;
+    sfTexture *texture_one;
+    sfTexture *texture_two;
+    sfTexture *texture_three;
+    sfTexture *texture_four;
+    sfTexture *texture_five;
     sfTexture *player_text;
     sfSprite *player;
     sfVector2f origin;

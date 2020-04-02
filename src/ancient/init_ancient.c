@@ -40,12 +40,12 @@ int init_dungeon_ancient(pnj_t *pnj)
     pnj->enter = sfSprite_create();
     pnj->texture_enter = sfTexture_createFromFile("assets/enter_dungeon.png",
                                                                     NULL);
+    return 0;
 }
 
 int init_ancient(pnj_t *pnj)
 {
     sfVector2f pos = {300, 300};
-
     pnj->texture = sfTexture_createFromFile("assets/pnj.png", NULL);
     pnj->sprite = sfSprite_create();
     pnj->font = sfFont_createFromFile("assets/police.otf");

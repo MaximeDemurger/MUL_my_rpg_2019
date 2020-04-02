@@ -51,13 +51,14 @@ MY 	= 		src/my/convert.c 					\
 			src/my/my_revstr.c 					\
 			src/my/my_strlen.c 					\
 			src/my/my_str_to_word_array.c		\
+			src/my/convert_int_to_string.c 		\
 
 PLAYER =	src/player/player_move.c 			\
 			src/player/move_rect.c 				\
+			src/player/player_life.c 			\
 
 SCORE = 	src/score_game/init_score_game.c	\
 			src/score_game/score.c				\
-			lib/convert_int_to_string.c \
 
 SRCS	= 	src/main.c 							\
 			src/open_window.c 					\

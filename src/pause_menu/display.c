@@ -18,4 +18,5 @@ int display_pausemenu(game_t *game)
                             game->pausemenu->quit_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->pausemenu->main_sprite, NULL);
+    return 0;
 }
