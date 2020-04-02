@@ -64,6 +64,8 @@ typedef struct utils_s {
     bool lvl_selection;
     bool in_dungeon;
     int life;
+    float width;
+    float height;
 } utils_t;
 
 #endif /* !MAIN_STRUCT */

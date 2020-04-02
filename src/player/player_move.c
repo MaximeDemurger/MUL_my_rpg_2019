@@ -13,13 +13,13 @@ int movement_player_y(play_t *play, utils_t *utils)
         sfSprite_setRotation(play->player, 90);
         move_rect_up(play);
         sfClock_restart(play->clock);
-        play->x_play += 30;
+        play->x_play += (utils->width / 128);
     }
     else if (utils->event.type == sfEvtKeyPressed &&
             utils->event.key.code == sfKeyLeft) {
         sfSprite_setRotation(play->player, -90);
         move_rect_up(play);
-        play->x_play -= 30;
+        play->x_play -= (utils->width / 128);
         sfClock_restart(play->clock);
     }
     return 0;
@@ -31,14 +31,14 @@ int movement_player_x(play_t *play, utils_t *utils)
         utils->event.key.code == sfKeyUp) {
         sfSprite_setRotation(play->player, 0);
         move_rect_up(play);
-        play->y_play -= 30;
+        play->y_play -= (utils->height / 75);
         sfClock_restart(play->clock);
     }
     else if (utils->event.type == sfEvtKeyPressed &&
             utils->event.key.code == sfKeyDown) {
         sfSprite_setRotation(play->player, 180);
         move_rect_up(play);
-        play->y_play += 30;
+        play->y_play += (utils->height / 75);
         sfClock_restart(play->clock);
     }
     else {

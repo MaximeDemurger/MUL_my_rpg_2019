@@ -21,6 +21,8 @@ int init_game_next(game_t *game, char **av)
         || score(game))
         return 1;
     game->utils->in_start = true;
+    game->utils->width = 1920;
+    game->utils->height = 1080;
     return 0;
 }
 
