@@ -11,8 +11,8 @@ int dungeon_pos(play_t *play, map_t *map)
 {
     if (map->map_pos_col == play->col_map &&
         map->map_pos_line == play->line_map &&
-        play->x_play >= 560 && play->x_play <= 1150 &&
-        play->y_play >= 200 && play->y_play <= 800)
+        play->x_play >= 590 && play->x_play <= 1185 &&
+        play->y_play >= 243 && play->y_play <= 840)
         return 1;
     return 0;
 }
@@ -43,7 +43,7 @@ void capture_events(utils_t *utils, game_t *game)
             utils->in_game == true)
             utils->in_pause = true;
         open_mini_map(game);
-        player_move(game->play, game->utils);
+        player_move(game->play, game->utils, game->map);
         if (utils->event.type == sfEvtKeyPressed &&
             utils->event.key.code == sfKeyE && game->pnj->in_range == true
             && game->pnj->is_talking == false)
