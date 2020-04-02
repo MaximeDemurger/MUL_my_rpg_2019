@@ -7,6 +7,22 @@
 
 #include "my.h"
 
+int print_dungeon(utils_t *utils, dungeon_t *dungeon)
+{
+    sfVector2f dungeon_pos = {0, 0};
+
+    while (dungeon_pos.y < 1080) {
+        dungeon_pos.x = 0;
+        while (dungeon_pos.x < 1920) {
+            sfSprite_setPosition(dungeon->ground, dungeon_pos);
+            sfRenderWindow_drawSprite(utils->window, dungeon->ground, NULL);
+            dungeon_pos.x += 128;
+        }
+        dungeon_pos.y += 135;
+    }
+    return 0;
+}
+
 int get_path(char **tab, map_t *map)
 {
     int line = 0;

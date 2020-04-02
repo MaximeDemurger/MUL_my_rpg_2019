@@ -14,6 +14,7 @@ RM	= rm -f
 TESTS	= $(wildcard src/*.g*)
 
 DUNGEON =	src/dungeon/get_path.c					\
+			src/dungeon/init_dungeon.c				\
 
 GAME	=	src/game/init_gameplay.c				\
 			src/game/draw_player.c					\

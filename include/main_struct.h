@@ -26,7 +26,7 @@ typedef struct game_s {
     struct keys_s *key;
     struct play_s *play;
     struct inventory_s *inv;
-    struct path_s *path;
+    struct dungeon_s *dungeon;
     struct pnj_s *pnj;
     struct select_s *select;
     struct score_s *score;

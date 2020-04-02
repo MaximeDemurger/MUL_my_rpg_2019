@@ -45,7 +45,7 @@ void display_selection(utils_t *, select_t *);
 int init_selection(select_t *);
 
 /* HIGHSCORE */
-int get_high_score(high_t *);
+int get_high_scores(high_t *);
 int add_new_score(high_t *, char const *);
 
 /* start menu */
@@ -125,6 +125,10 @@ int set_texture_life(play_t *play, utils_t *utils);
 int display_life(play_t *play, utils_t *utils);
 int destroy_heart_next_two(play_t *play, utils_t *utils);
 int destroy_heart_next(play_t *play, utils_t *utils);
+
+/* DUNGEON */
+int init_dungeon(dungeon_t *dungeon);
+int print_dungeon(utils_t *utils, dungeon_t *dungeon);
 
 /*score*/
 int init_score_game(game_t *game);
