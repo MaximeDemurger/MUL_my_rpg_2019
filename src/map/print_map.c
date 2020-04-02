@@ -13,23 +13,23 @@
 
 int check_map(play_t *play, keys_t *keys, enemy_t *ene)
 {
-    if (play->x_play == 1840 && play->col_map < 32) {
-        play->x_play = 20;
+    if (play->x_play >= 1895 && play->col_map < 32) {
+        play->x_play = 45;
         play->col_map += 16;
         init_keys(&keys);
         init_enemy(&ene, rand() % 4);
-    } else if (play->x_play == 0 && play->col_map > 0) {
-        play->x_play = 1820;
+    } else if (play->x_play <= 20 && play->col_map > 0) {
+        play->x_play = 1870;
         play->col_map -= 16;
         init_keys(&keys);
         init_enemy(&ene, rand() % 4);
-    } else if (play->y_play == 1010 && play->line_map < 16) {
-        play->y_play = 20;
+    } else if (play->y_play >= 1049 && play->line_map < 16) {
+        play->y_play = 53;
         play->line_map += 8;
         init_keys(&keys);
         init_enemy(&ene, rand() % 4);
-    } else if (play->y_play == -10 && play->line_map > 0) {
-        play->y_play = 980;
+    } else if (play->y_play <= 32 && play->line_map > 0) {
+        play->y_play = 1034;
         play->line_map -= 8;
         init_keys(&keys);
         init_enemy(&ene, rand() % 4);

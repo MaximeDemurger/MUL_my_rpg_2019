@@ -18,7 +18,7 @@ int init_game_next(game_t *game, char **av)
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)
-        || score(game))
+        || score(game) || get_high_scores(game->high))
         return 1;
     game->utils->in_start = true;
     game->utils->width = 1920;
@@ -39,6 +39,7 @@ int init_game(game_t *game, char **av)
     game->pnj = malloc(sizeof(pnj_t));
     game->select = malloc(sizeof(select_t));
     game->score = malloc(sizeof(score_t));
+    game->high = NULL;
     if (init_game_next(game, av) == 1)
         return 1;
     return 0;

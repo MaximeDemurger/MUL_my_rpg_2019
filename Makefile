@@ -45,6 +45,9 @@ ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 				src/achievement/draw_indicators.c 	\
 				src/achievement/init_achivement.c 	\
 
+HIGHSCORE = 	src/highscore/add_score.c 			\
+				src/highscore/get_high_scores.c 	\
+
 MY 	= 		src/my/convert.c 					\
 			src/my/my_strdup.c					\
 			src/my/get_next_line.c				\
@@ -52,6 +55,7 @@ MY 	= 		src/my/convert.c 					\
 			src/my/my_strlen.c 					\
 			src/my/my_str_to_word_array.c		\
 			src/my/convert_int_to_string.c 		\
+			src/my/my_atoi.c 					\
 
 PLAYER =	src/player/player_move.c 			\
 			src/player/move_rect.c 				\
@@ -81,6 +85,7 @@ SRCS	= 	src/main.c 							\
 			$(ANCIENT)							\
 			$(SELECTION)						\
 			$(SCORE)							\
+			$(HIGHSCORE)						\
 
 OBJS	= $(SRCS:.c=.o)
 

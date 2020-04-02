@@ -30,6 +30,7 @@
 #include "dungeon.h"
 #include "ancient.h"
 #include "selection.h"
+#include "highscores.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -42,6 +43,10 @@ int open_window(utils_t *, game_t *);
 /* SELECTION */
 void display_selection(utils_t *, select_t *);
 int init_selection(select_t *);
+
+/* HIGHSCORE */
+int get_high_score(high_t *);
+int add_new_score(high_t *, char const *);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
@@ -104,11 +109,13 @@ char *get_next_line(int fd);
 char **my_str_to_word_array(char const *str, char separator);
 char *my_itoa(int nb);
 int calc_int_len(int nb);
+int my_atoi(char const *);
 
 /*player*/
-int player_move(play_t *play, utils_t *utils);
-int movement_player_x(play_t *play, utils_t *utils);
-int movement_player_y(play_t *play, utils_t *utils);
+int dungeon_pos(play_t *play, map_t *map);
+int player_move(play_t *play, utils_t *utils, map_t *map);
+int movement_player_x(play_t *play, utils_t *utils, map_t *map);
+int movement_player_y(play_t *play, utils_t *utils, map_t *map);
 void move_rect_down(play_t *play);
 void move_rect_up(play_t *play);
 int display_life(play_t *play, utils_t *utils);
