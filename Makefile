@@ -60,6 +60,7 @@ MY 	= 		src/my/convert.c 					\
 PLAYER =	src/player/player_move.c 			\
 			src/player/move_rect.c 				\
 			src/player/player_life.c 			\
+			src/player/player_remove_life.c		\
 
 SCORE = 	src/score_game/init_score_game.c	\
 			src/score_game/score.c				\
