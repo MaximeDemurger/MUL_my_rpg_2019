@@ -32,6 +32,12 @@ void navigation_controller(utils_t *utils, game_t *game)
         if (game->map->open_map == true)
             print_minimap(game);
     }
+    if (utils->in_dungeon == true) {
+        game->play->x_play = 150;
+        game->play->y_play = 150;
+        print_dungeon(utils, game->dungeon);
+        draw_player(game->play, game->utils, game);
+    }
     if (utils->in_pause == true)
         display_pausemenu(game);
     //     death_menu(utils, game->death);

@@ -120,6 +120,10 @@ void move_rect_down(play_t *play);
 void move_rect_up(play_t *play);
 int display_life(play_t *play, utils_t *utils);
 
+/* DUNGEON */
+int init_dungeon(dungeon_t *dungeon);
+int print_dungeon(utils_t *utils, dungeon_t *dungeon);
+
 /*score*/
 int init_score_game(game_t *game);
 int display_score(game_t *game);
