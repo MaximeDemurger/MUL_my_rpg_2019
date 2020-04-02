@@ -12,7 +12,7 @@ int init_gameplay(play_t *play)
     sfIntRect rect = {0, 0, 350, 300};
     sfVector2f offset = {5, 0};
 
-    play->life = 10;
+    play->life = 5;
     play->x_play = 1000;
     play->y_play = 500;
     play->origin.x = 175;

@@ -26,18 +26,28 @@ typedef struct score_s {
 }score_t;
 
 typedef struct play_s {
-    int life;
+    float life;
     sfSprite *one;
     sfSprite *two;
     sfSprite *three;
     sfSprite *four;
     sfSprite *five;
+    sfSprite *empty_one;
+    sfSprite *empty_two;
+    sfSprite *empty_three;
+    sfSprite *empty_four;
+    sfSprite *empty_five;
+    sfTexture *empty_texture_one;
+    sfTexture *empty_texture_two;
+    sfTexture *empty_texture_three;
+    sfTexture *empty_texture_four;
+    sfTexture *empty_texture_five;
+    sfTexture *player_text;
     sfTexture *texture_one;
     sfTexture *texture_two;
     sfTexture *texture_three;
     sfTexture *texture_four;
     sfTexture *texture_five;
-    sfTexture *player_text;
     sfSprite *player;
     sfVector2f origin;
     int x_play;
