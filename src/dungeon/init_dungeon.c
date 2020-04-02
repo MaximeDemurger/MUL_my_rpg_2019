@@ -15,4 +15,5 @@ int init_dungeon(dungeon_t *dungeon)
     if (!dungeon->ground || !dungeon->text_ground)
         return 84;
     sfSprite_setTexture(dungeon->ground, dungeon->text_ground, sfTrue);
+    return 0;
 }

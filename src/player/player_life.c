@@ -55,6 +55,7 @@ int create_sprite(play_t *play)
     play->empty_three = sfSprite_create();
     play->empty_four = sfSprite_create();
     play->empty_five = sfSprite_create();
+    return 0;
 }
 
 int create_texture(play_t *play)
@@ -84,7 +85,7 @@ int create_texture(play_t *play)
 int display_life(play_t *play, utils_t *utils)
 {
     sfVector2f scale = {0.15, 0.15};
-    sfVector2f scale_empty = {0.15, 0.15};
+    sfVector2f scale_empty = {0.2, 0.2};
 
     create_sprite(play);
     create_texture(play);
