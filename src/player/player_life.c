@@ -68,7 +68,6 @@ int create_texture(play_t *play)
         = sfTexture_createFromFile("utils/imgs/heart.png", NULL);
     play->texture_five
         = sfTexture_createFromFile("utils/imgs/heart.png", NULL);
-        
     play->empty_texture_one =
         sfTexture_createFromFile("utils/imgs/empty_heart.png", NULL);
     play->empty_texture_two =

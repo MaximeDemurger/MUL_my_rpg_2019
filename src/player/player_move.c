@@ -56,7 +56,6 @@ int player_move(play_t *play, utils_t *utils, map_t *map)
     sfVector2f scale = {0.2, 0.2};
     sfTime time = sfClock_getElapsedTime(play->clock);
     float seconds = time.microseconds / 1000000.0;
-    
 
     sfSprite_setScale(play->player, scale);
     sfRectangleShape *sfRectangleShape_create(void);

@@ -41,7 +41,7 @@ int destroy_heart_next(play_t *play, utils_t *utils)
         sfRenderWindow_drawSprite(utils->window, play->empty_three, NULL);
         sfRenderWindow_drawSprite(utils->window, play->empty_four, NULL);
         sfRenderWindow_drawSprite(utils->window, play->empty_five, NULL);
-    } else 
+    } else
         destroy_heart_next_two(play, utils);
     return 0;
 }
@@ -65,5 +65,5 @@ int destroy_heart(play_t *play, utils_t *utils)
     } else {
         destroy_heart_next(play, utils);
     }
-    return 0; 
+    return 0;
 }

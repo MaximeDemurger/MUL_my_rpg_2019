@@ -11,6 +11,17 @@
 #include <fcntl.h>
 #include "my.h"
 
+char write_in_file_next(int i, int *j, int random)
+{
+    if (random == 0)
+        return '1';
+    if (random == 1)
+        return 'O';
+    else if (random == 2)
+        return 'X';
+    return 0;
+}
+
 char write_in_file(int i, int *j, int random)
 {
     if (i == 1151)
@@ -18,41 +29,9 @@ char write_in_file(int i, int *j, int random)
     if (i == *j) {
         *j += 48;
         return '\n';
-    } else if (random == 0)
-        return '1';
-    else if (random == 1)
-        return 'O';
-    else if (random == 2)
-        return 'X';
+    } else
+        return write_in_file_next(i, j, random);
     return 0;
-}
-
-
-char **put_donjon(char **tab)
-{
-    int random_line = (rand() % 3);
-    int random_col = (rand() % 3);
-    int line = random_line * 8 + 2;;
-    int secondline = line;
-    int col = 0;
-    int secondcol;
-
-    if (random_col == 0 && random_line == 0)
-        random_col++;
-    col = random_col * 16 + 5;
-    secondcol = col;
-    while (line < 4 + secondline) {
-        col = random_col * 16 + 5;
-        while (col < 4 + secondcol) {
-            if (line == random_line * 8 + 2 && col == random_col * 16 + 5) {
-                tab[line][col - 1] = 'S';
-                tab[line - 1][col - 1] = 'E';
-            }
-            tab[line][col++] = 'D';
-        }
-        line++;
-    }
-    return tab;
 }
 
 char **map_generator(void)

@@ -24,6 +24,22 @@ void set_texture_map(map_t *map)
     sfSprite_setTexture(map->stairs, map->stairs_text, sfTrue);
 }
 
+int init_minimap_next(map_t *map)
+{
+    map->mini_stairs = sfSprite_create();
+    map->donjon_mini = sfSprite_create();
+    map->mini_map = sfSprite_create();
+    map->mini_grass = sfSprite_create();
+    map->mini_soil = sfSprite_create();
+    map->mini_tower = sfSprite_create();
+    if (!map->mini_soil || !map->mini_tower || !map->mini_grass ||
+    !map->mini_tower_text || !map->mini_soil_text || !map->mini_grass_text ||
+    !map->mini_map || !map->mini_map_text || !map->donjon_mini ||
+    !map->donjon_mini_text)
+        return 84;
+    return 0;
+}
+
 int init_minimap(map_t *map)
 {
     map->mini_grass_text = sfTexture_createFromFile(
@@ -37,18 +53,23 @@ int init_minimap(map_t *map)
     map->donjon_mini_text = sfTexture_createFromFile(
                                 "utils/imgs/dungeon_mini.png", NULL);
     map->mini_stairs_text = sfTexture_createFromFile(
-                                            "utils/imgs/mini_stairs.png", NULL);
-    map->mini_stairs = sfSprite_create();
-    map->donjon_mini = sfSprite_create();
-    map->mini_map = sfSprite_create();
-    map->mini_grass = sfSprite_create();
-    map->mini_soil = sfSprite_create();
-    map->mini_tower = sfSprite_create();
-    if (!map->mini_soil || !map->mini_tower || !map->mini_grass ||
-    !map->mini_tower_text || !map->mini_soil_text || !map->mini_grass_text ||
-    !map->mini_map || !map->mini_map_text || !map->donjon_mini ||
-    !map->donjon_mini_text)
+                                "utils/imgs/mini_stairs.png", NULL);
+    if (init_minimap_next(map) == 84)
         return 84;
+    return 0;
+}
+
+int init_map_next(map_t *map)
+{
+    init_minimap(map);
+    if (!map->soil || !map->tower_pos || !map->grass ||
+    !map->tower_pos_text || !map->soil_text || !map->grass_text ||
+    !map->donjon || !map->donjon_text)
+        return 84;
+    set_texture_map(map);
+    map->map_pars = map_generator();
+    map->open_map = false;
+    map->wait_for_it = 0;
     return 0;
 }
 
@@ -67,14 +88,7 @@ int init_map(map_t *map)
     map->stairs_text = sfTexture_createFromFile(
                                             "utils/imgs/stairs.png", NULL);
     map->stairs = sfSprite_create();
-    init_minimap(map);
-    if (!map->soil || !map->tower_pos || !map->grass ||
-    !map->tower_pos_text || !map->soil_text || !map->grass_text ||
-    !map->donjon || !map->donjon_text)
+    if (init_map_next(map) == 84)
         return 84;
-    set_texture_map(map);
-    map->map_pars = map_generator();
-    map->open_map = false;
-    map->wait_for_it = 0;
     return 0;
 }

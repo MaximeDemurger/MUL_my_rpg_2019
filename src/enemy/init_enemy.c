@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2020
-** my rpg 
+** my rpg
 ** File description:
 ** init enemy
 */

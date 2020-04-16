@@ -33,6 +33,22 @@ void open_mini_map(game_t *game)
     game->map->wait_for_it++;
 }
 
+void capture_event_next(utils_t *utils, game_t *game)
+{
+    if (utils->event.type == sfEvtKeyPressed &&
+        utils->event.key.code == sfKeyE && game->pnj->in_range == true
+        && game->pnj->is_talking == false)
+        game->pnj->is_talking = true;
+    if (utils->event.type == sfEvtKeyPressed &&
+        utils->event.key.code == sfKeyN && game->pnj->is_talking == true)
+        game->pnj->index += 1;
+    if (game->pnj->next_to == 1 && utils->event.key.code == sfKeyA
+        && game->dungeon->all_achiv == 1) {
+        game->utils->in_dungeon = true;
+        game->utils->in_game = false;
+    }
+}
+
 void capture_events(utils_t *utils, game_t *game)
 {
     while (sfRenderWindow_pollEvent(utils->window, &utils->event)) {
@@ -44,17 +60,6 @@ void capture_events(utils_t *utils, game_t *game)
             utils->in_pause = true;
         open_mini_map(game);
         player_move(game->play, game->utils, game->map);
-        if (utils->event.type == sfEvtKeyPressed &&
-            utils->event.key.code == sfKeyE && game->pnj->in_range == true
-            && game->pnj->is_talking == false)
-            game->pnj->is_talking = true;
-        if (utils->event.type == sfEvtKeyPressed &&
-            utils->event.key.code == sfKeyN && game->pnj->is_talking == true)
-            game->pnj->index += 1;
-        if (game->pnj->next_to == 1 && utils->event.key.code == sfKeyA
-            && game->dungeon->all_achiv == 1) {
-            game->utils->in_dungeon = true;
-            game->utils->in_game = false;
-        }
+        capture_event_next(utils, game);
     }
 }

@@ -29,8 +29,8 @@ char *convert_to_string(int nb)
         return ("0");
     }
     while (nb > 0) {
-        string[i] = (nb % 10)  + 48;
-        nb = nb/ 10;
+        string[i] = (nb % 10) + 48;
+        nb = nb / 10;
         i++;
     }
     string[i] = '\0';

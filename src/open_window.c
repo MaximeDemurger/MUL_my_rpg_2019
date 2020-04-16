@@ -9,15 +9,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void navigation_controller(utils_t *utils, game_t *game)
+void navigation_controller_next(utils_t *utils, game_t *game,
+sfVector2f player_pos)
 {
-    sfVector2f player_pos = {(float)game->play->x_play,
-                            (float)game->play->y_play};
-
-    if (utils->in_start == true)
-        display_startmenu(utils, game->startmenu);
-    if (utils->lvl_selection == true)
-        display_selection(utils, game->select);
     if (utils->in_game == true) {
         printing_map(game);
         draw_player(game->play, game->utils, game);
@@ -32,17 +26,29 @@ void navigation_controller(utils_t *utils, game_t *game)
         if (game->map->open_map == true)
             print_minimap(game);
     }
+    if (utils->in_pause == true)
+        display_pausemenu(game);
+    //     death_menu(utils, game->death);
+    // if (utils->settings == true)
+    //     settings_menu(utils, game->settings);
+}
+
+void navigation_controller(utils_t *utils, game_t *game)
+{
+    sfVector2f player_pos = {(float)game->play->x_play,
+                            (float)game->play->y_play};
+
+    if (utils->in_start == true)
+        display_startmenu(utils, game->startmenu);
+    if (utils->lvl_selection == true)
+        display_selection(utils, game->select);
     if (utils->in_dungeon == true) {
         game->play->x_play = 150;
         game->play->y_play = 150;
         print_dungeon(utils, game->dungeon);
         draw_player(game->play, game->utils, game);
     }
-    if (utils->in_pause == true)
-        display_pausemenu(game);
-    //     death_menu(utils, game->death);
-    // if (utils->settings == true)
-    //     settings_menu(utils, game->settings);
+    navigation_controller_next(utils, game, player_pos);
 }
 
 int open_window(utils_t *utils, game_t *game)

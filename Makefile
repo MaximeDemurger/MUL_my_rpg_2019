@@ -30,6 +30,9 @@ MAP		= 	src/map/map_generator/map_generator.c	\
 			src/map/getting_map.c					\
 			src/map/init_map.c						\
 			src/map/print_map.c						\
+			src/map/print_minimap.c					\
+			src/map/check_map.c						\
+			src/map/map_generator/put_donjon.c		\
 
 ENEMY 	= 	src/enemy/draw_enemys.c 	\
 			src/enemy/init_enemy.c 		\

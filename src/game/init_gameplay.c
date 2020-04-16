@@ -19,7 +19,8 @@ int init_gameplay(play_t *play)
     play->origin.y = 150;
     play->col_map = 0;
     play->line_map = 0;
-    play->player_text = sfTexture_createFromFile("utils/imgs/player.png", NULL);
+    play->player_text =
+    sfTexture_createFromFile("utils/imgs/player.png", NULL);
     play->player = sfSprite_create();
     play->clock = sfClock_create();
     sfSprite_setOrigin(play->player, play->origin);

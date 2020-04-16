@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** my rpg
 ** File description:
-** display selection 
+** display selection
 */
 
 #include "my.h"
