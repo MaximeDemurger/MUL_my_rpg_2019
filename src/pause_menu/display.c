@@ -10,6 +10,7 @@
 int display_pausemenu(game_t *game)
 {
     sfRenderWindow_clear(game->utils->window, sfBlack);
+    display_highlight(game);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->pausemenu->background_sprite, NULL);
     sfRenderWindow_drawSprite(game->utils->window,

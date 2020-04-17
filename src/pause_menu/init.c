@@ -52,6 +52,7 @@ int set_positions_pause(game_t *game)
 int init_pausemenu(game_t *game)
 {
     create_sprites_pause(game);
+    create_highlights(game);
     set_textures_pause(game);
     set_positions_pause(game);
     return 0;
