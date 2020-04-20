@@ -49,7 +49,7 @@ void enemy_move(game_t *game, enemy_t *enemy, sfVector2f player)
             / 1000000.0 >= 0.001 && vector_dist(current->dir) <= 200 &&
             vector_dist(current->dir) >= 45) {
             if (vector_dist(current->dir) <= 55)
-                game->play->life -= 0.1;
+                game->play->life-= 0.1;
             current->dir = normalize_vector(current->dir);
             current->pos.x += current->dir.x;
             current->pos.y += current->dir.y;

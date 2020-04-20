@@ -124,11 +124,12 @@ void move_rect_down(play_t *play);
 void move_rect_up(play_t *play);
 int destroy_heart(play_t *play, utils_t *utils);
 int destroy_heart_next(play_t *play, utils_t *utils);
-int set_position_life(play_t *play, utils_t *utils);
-int set_texture_life(play_t *play, utils_t *utils);
-int display_life(play_t *play, utils_t *utils);
+int set_position_heart(play_t *play);
+int set_texture_heart(play_t *play);
+int display_heart(play_t *play, utils_t *utils);
 int destroy_heart_next_two(play_t *play, utils_t *utils);
 int destroy_heart_next(play_t *play, utils_t *utils);
+int attack_enemis(play_t *play, utils_t *utils);
 
 /* DUNGEON */
 int init_dungeon(dungeon_t *dungeon);

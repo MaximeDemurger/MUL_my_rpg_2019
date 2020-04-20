@@ -39,6 +39,9 @@ void capture_event_next(utils_t *utils, game_t *game)
         utils->event.key.code == sfKeyE && game->pnj->in_range == true
         && game->pnj->is_talking == false)
         game->pnj->is_talking = true;
+    if (utils->event.type == sfEvtKeyPressed
+    && utils->event.key.code == sfKeyA)
+        attack_enemis(game->play, utils);
     if (utils->event.type == sfEvtKeyPressed &&
         utils->event.key.code == sfKeyN && game->pnj->is_talking == true)
         game->pnj->index += 1;

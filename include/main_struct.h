@@ -64,7 +64,7 @@ typedef struct utils_s {
     bool in_game;
     bool lvl_selection;
     bool in_dungeon;
-    int life;
+    int heart;
     float width;
     float height;
 } utils_t;

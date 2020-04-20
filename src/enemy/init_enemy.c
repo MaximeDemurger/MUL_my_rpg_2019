@@ -18,7 +18,7 @@ enemy_t *add_elem(enemy_t *elem)
     offset.y = rand() % 900;
     if (!tmp)
         return NULL;
-    tmp->life = 100;
+    tmp->heart = 100;
     tmp->texture = sfTexture_createFromFile("assets/monstre.png", NULL);
     tmp->sprite = sfSprite_create();
     tmp->clock = sfClock_create();

@@ -22,7 +22,7 @@ sfVector2f player_pos)
         draw_achivement(utils, game->achiv);
         draw_inventory(utils, game->inv, game->achiv);
         display_score(game);
-        display_life(game->play, game->utils);
+        display_heart(game->play, game->utils);
         if (game->map->open_map == true)
             print_minimap(game);
     }
@@ -62,7 +62,7 @@ int open_window(utils_t *utils, game_t *game)
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);
         capture_events(utils, game);
-        if (utils->life <= 0) utils->death = true;
+        if (utils->heart <= 0) utils->death = true;
         sfRenderWindow_display(utils->window);
         sfRenderWindow_clear(utils->window, sfBlack);
     }

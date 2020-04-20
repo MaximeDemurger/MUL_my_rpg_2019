@@ -21,7 +21,7 @@ typedef struct enemys_s {
     sfSprite *sprite;
     sfVector2f pos;
     sfVector2f dir;
-    int life;
+    int heart;
     sfClock *clock;
     struct enemys_s *next;
 }enemy_t;

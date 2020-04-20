@@ -25,8 +25,7 @@ typedef struct score_s {
     sfText *score_text;
 }score_t;
 
-typedef struct play_s {
-    float life;
+typedef struct heart_s {
     sfSprite *one;
     sfSprite *two;
     sfSprite *three;
@@ -48,6 +47,15 @@ typedef struct play_s {
     sfTexture *texture_three;
     sfTexture *texture_four;
     sfTexture *texture_five;
+}heart_t;
+
+typedef struct attack_s {
+    sfSprite *sprite_attack;
+    sfTexture *texture_atatck;
+}attack_y;
+
+typedef struct play_s {
+    float life;
     sfSprite *player;
     sfVector2f origin;
     int x_play;
@@ -57,6 +65,8 @@ typedef struct play_s {
     sfIntRect rect;
     int col_map;
     int line_map;
-} play_t;
+    struct heart_s *heart;
+    struct attack_s *attack;
+}play_t;
 
 #endif /* !PLAY_STRUCT_H */
