@@ -25,6 +25,10 @@ sfVector2f player_pos)
         display_heart(game->play, game->utils);
         if (game->map->open_map == true)
             print_minimap(game);
+        if (game->play->attack_number >= 1) {
+            attack_enemis(game->play, game->utils, game->ene);
+            game->play->attack_number = 0;
+        }
     }
     if (utils->in_pause == true)
         display_pausemenu(game);

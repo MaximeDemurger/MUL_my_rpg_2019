@@ -51,13 +51,14 @@ typedef struct heart_s {
 
 typedef struct attack_s {
     sfSprite *sprite_attack;
-    sfTexture *texture_atatck;
-}attack_y;
+    sfTexture *texture_attack;
+}attack_t;
 
 typedef struct play_s {
     float life;
     sfSprite *player;
     sfVector2f origin;
+    int attack_number;
     int x_play;
     int y_play;
     sfClock *clock;
