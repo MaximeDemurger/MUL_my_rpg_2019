@@ -57,7 +57,7 @@ int open_window(utils_t *utils, game_t *game)
     game->ene = NULL;
     init_keys(&game->key);
     init_enemy(&game->ene, rand() % 4);
-    init_enemy(&game->ene, 5);
+    //init_enemy(&game->ene, 5);
     get_path(game->map->map_pars, game->map);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);
