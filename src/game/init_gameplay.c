@@ -12,7 +12,8 @@ int init_gameplay(play_t *play)
     sfIntRect rect = {0, 0, 350, 300};
     sfVector2f offset = {5, 0};
 
-    play->heart= malloc(sizeof(heart_t));
+    play->heart = malloc(sizeof(heart_t));
+    play->attack = malloc(sizeof(attack_t));
     play->life = 5;
     play->x_play = 1000;
     play->y_play = 500;

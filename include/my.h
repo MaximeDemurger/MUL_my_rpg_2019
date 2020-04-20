@@ -135,6 +135,7 @@ int display_heart(play_t *play, utils_t *utils);
 int destroy_heart_next_two(play_t *play, utils_t *utils);
 int destroy_heart_next(play_t *play, utils_t *utils);
 int attack_enemis(play_t *play, utils_t *utils, enemy_t *ene);
+int create_texture_attack(play_t *play, utils_t *utils);
 
 /* DUNGEON */
 int init_dungeon(dungeon_t *dungeon);

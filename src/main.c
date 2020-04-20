@@ -21,6 +21,7 @@ int init_game_next(game_t *game, char **av)
         || score(game) || get_high_scores(game->high) ||
         init_dungeon(game->dungeon))
         return 1;
+    create_texture_attack(game->play, game->utils);
     game->utils->in_start = true;
     game->utils->width = 1920;
     game->utils->height = 1080;
