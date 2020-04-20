@@ -21,7 +21,9 @@ void interactions(utils_t *utils, game_t *game, sfText *interact)
 {
     if (game->pnj->is_talking == true) {
         sfText_setString(interact, "Press N to see more");
-        sfText_setString(game->pnj->text, game->pnj->dialog[game->pnj->index]);
+        if (game->pnj->dialog[game->pnj->index])
+            sfText_setString(game->pnj->text,
+                            game->pnj->dialog[game->pnj->index]);
         sfRenderWindow_drawSprite(utils->window, game->pnj->bulle, NULL);
         sfRenderWindow_drawText(utils->window, interact, NULL);
         sfRenderWindow_drawText(utils->window, game->pnj->text, NULL);

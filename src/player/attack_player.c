@@ -22,7 +22,7 @@ int attack_enemis(play_t *play, utils_t *utils, enemy_t *ene)
     enemy_t *tmp = ene;
 
     while (tmp) {
-        if (enemy_inrage(tmp, (float)play->x_play, (float)play->y_play)) {
+        if (enemy_inrange(tmp, (float)play->x_play, (float)play->y_play)) {
             tmp->heart -= 25;
         }
         tmp = tmp->next;

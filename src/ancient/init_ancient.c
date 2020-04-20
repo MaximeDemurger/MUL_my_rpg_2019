@@ -65,5 +65,6 @@ int init_ancient(pnj_t *pnj)
     pnj->dialog[4] = "And collect at least 30 golds";
     pnj->dialog[5] = "Then find the dungeon but I can't say more about it!";
     pnj->dialog[6] = "Good Luck adventurer try not to get killed AHAHAHAH!!";
+    pnj->dialog[7] = NULL;
     return 0;
 }
