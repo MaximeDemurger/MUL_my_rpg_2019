@@ -44,7 +44,8 @@ int my_delete_food(food_t **begin, sfVector2f player_pos)
 
 void pick_up_food(food_t **foods, sfVector2f player_pos, play_t *play)
 {
-    if (my_delete_food(foods, player_pos))
-        if (play->life < 5)
+    if (play->life < 5) {
+        if (my_delete_food(foods, player_pos))
             play->life += 1;
+    }
 }
