@@ -31,11 +31,8 @@ typedef struct game_s {
     struct select_s *select;
     struct score_s *score;
     struct high_s *high;
-<<<<<<< HEAD
     struct food_s *food;
-=======
     struct settings_s *settings;
->>>>>>> 20b5c7b814e1bc417c4f1dad6031b24ebb2324c2
 } game_t;
 
 typedef struct startmenu_s {
