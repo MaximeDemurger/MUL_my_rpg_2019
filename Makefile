@@ -82,6 +82,7 @@ SRCS	= 	src/main.c 							\
 			src/pause_menu/display.c 			\
 			src/pause_menu/highlight.c          \
 			src/pause_menu/init.c               \
+			src/settings/init.c           		\
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\

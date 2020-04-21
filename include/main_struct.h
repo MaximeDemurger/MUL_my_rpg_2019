@@ -31,7 +31,11 @@ typedef struct game_s {
     struct select_s *select;
     struct score_s *score;
     struct high_s *high;
+<<<<<<< HEAD
     struct food_s *food;
+=======
+    struct settings_s *settings;
+>>>>>>> 20b5c7b814e1bc417c4f1dad6031b24ebb2324c2
 } game_t;
 
 typedef struct startmenu_s {
@@ -44,6 +48,12 @@ typedef struct startmenu_s {
     sfTexture *start_texture_highlight;
     sfTexture *quit_texture_highlight;
 } startmenu_t;
+
+typedef struct settings_s {
+    sfTexture *settings_texture_highlight;
+    sfTexture *settings_texture;
+    sfSprite *settings_sprite;
+} settings_t;
 
 typedef struct pausemenu_s {
     sfSprite *background_sprite;
@@ -63,6 +73,7 @@ typedef struct utils_s {
     bool death;
     bool in_start;
     bool in_game;
+    bool in_settings;
     bool lvl_selection;
     bool in_dungeon;
     int heart;

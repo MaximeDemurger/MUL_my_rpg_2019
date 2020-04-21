@@ -18,7 +18,6 @@ int display_highlight(game_t *game)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(game->utils->window);
 
-    printf("%d  %d\n", pos.x, pos.y);
     display_highlight_start_pause(game->pausemenu, pos, game->startmenu);
     display_highlight_main_pause(game->pausemenu, pos, game->startmenu);
     display_highlight_quit_pause(game->pausemenu, pos, game->startmenu);
