@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void navigation_controller_next(utils_t *utils, game_t *game,
+void display_game(utils_t *utils, game_t *game,
 sfVector2f player_pos)
 {
     if (utils->in_game == true) {
@@ -33,6 +33,12 @@ sfVector2f player_pos)
             game->play->attack_number = 0;
         }
     }
+}
+
+void navigation_controller_next(utils_t *utils, game_t *game,
+sfVector2f player_pos)
+{
+    display_game(utils, game, player_pos);
     if (utils->in_pause == true)
         display_pausemenu(game);
     if (utils->in_settings == true)
