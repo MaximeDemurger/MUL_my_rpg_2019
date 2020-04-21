@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-food_t *add_heart(food_t *food)
+food_t *add_food(food_t *food)
 {
     food_t *tmp = malloc(sizeof(food_t));
     sfVector2f pos;
@@ -32,7 +32,7 @@ int init_food(food_t **food)
     int nb = rand() % 5;
 
     while (nb > 0) {
-        *food = add_heart(*food);
+        *food = add_food(*food);
         nb--;
     }
     return 0;
