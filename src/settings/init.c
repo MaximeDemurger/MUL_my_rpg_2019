@@ -36,7 +36,8 @@ int highlight_settings_button(game_t *game)
 
 int display_settings(game_t *game)
 {
-    printf("ma bite\n");
+    sfRenderWindow_drawSprite(game->utils->window,
+                        game->startmenu->background_sprite, NULL);
 }
 
 int display_settings_button(game_t *game)
@@ -52,9 +53,6 @@ int init_settings(game_t *game)
     sfVector2f pos = {1800, 25};
     sfVector2f scale = {0.3, 0.3};
 
-    game->settings->background_sprite = sfSprite_create();
-    sfSprite_setTexture(game->settings->background_sprite,
-                    game->startmenu->background_texture, sfTrue);
     game->settings->settings_sprite = sfSprite_create();
     game->settings->settings_texture = sfTexture_createFromFile
                                     ("./utils/imgs/settings.png", NULL);

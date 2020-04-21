@@ -46,7 +46,6 @@ typedef struct startmenu_s {
 } startmenu_t;
 
 typedef struct settings_s {
-    sfSprite *background_sprite;
     sfTexture *settings_texture_highlight;
     sfTexture *settings_texture;
     sfSprite *settings_sprite;
