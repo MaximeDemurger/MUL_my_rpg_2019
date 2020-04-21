@@ -20,6 +20,7 @@ sfVector2f player_pos)
         enemy_move(game, game->ene, player_pos);
         draw_keys(utils, game->key);
         pick_up_keys(&game->key, player_pos, game->achiv);
+        pick_up_food(&game->food, player_pos, game->play);
         draw_achivement(utils, game->achiv);
         draw_inventory(utils, game->inv, game->achiv);
         display_score(game);
