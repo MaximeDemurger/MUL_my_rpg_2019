@@ -49,6 +49,10 @@ typedef struct settings_s {
     sfTexture *settings_texture_highlight;
     sfTexture *settings_texture;
     sfSprite *settings_sprite;
+    sfSprite *circle_sprite;
+    sfSprite *bar_sprite;
+    sfTexture *circle_texture;
+    sfTexture *bar_texture;
 } settings_t;
 
 typedef struct pausemenu_s {
