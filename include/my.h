@@ -63,8 +63,8 @@ char **map_generator(void);
 int init_map(map_t *map);
 void printing_map(game_t *game);
 void print_minimap(game_t *game);
-int check_map(play_t *play, keys_t *keys, enemy_t *ene);
-int check_map_next(play_t *play, keys_t *keys, enemy_t *ene);
+int check_map(play_t *play, game_t *);
+int check_map_next(play_t *play, game_t *);
 void check_mini_next(char a, utils_t *utils, map_t *map, sfVector2f pos);
 char **put_donjon(char **tab);
 

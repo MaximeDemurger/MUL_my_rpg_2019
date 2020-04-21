@@ -87,7 +87,7 @@ void printing_map(game_t *game)
     int col = 0;
     int line = 0;
 
-    check_map(game->play, game->key, game->ene);
+    check_map(game->play, game);
     line = game->play->line_map;
     while (line < 8 + game->play->line_map) {
         col = game->play->col_map;

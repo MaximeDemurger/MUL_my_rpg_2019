@@ -35,4 +35,5 @@ int init_food(food_t **food)
         *food = add_heart(*food);
         nb--;
     }
+    return 0;
 }
