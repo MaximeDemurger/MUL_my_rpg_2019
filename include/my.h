@@ -31,6 +31,7 @@
 #include "ancient.h"
 #include "selection.h"
 #include "highscores.h"
+#include "food.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -94,6 +95,10 @@ int init_achivement(achiv_t *);
 void enemy_move(game_t *, enemy_t *, sfVector2f);
 void init_enemy(enemy_t **, size_t);
 void draw_enemys(utils_t *, enemy_t *);
+
+/* FOOD */
+int init_food(food_t **);
+void draw_food(utils_t *, food_t *);
 
 /* KEYS */
 void init_keys(keys_t **);
