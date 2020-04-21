@@ -23,6 +23,7 @@ sfVector2f player_pos)
         draw_inventory(utils, game->inv, game->achiv);
         display_score(game);
         display_heart(game->play, game->utils);
+        display_settings_button(game);
         if (game->map->open_map == true)
             print_minimap(game);
         if (game->play->attack_number >= 1) {
@@ -32,6 +33,8 @@ sfVector2f player_pos)
     }
     if (utils->in_pause == true)
         display_pausemenu(game);
+    if (utils->in_settings == true)
+        display_settings(game);
     //     death_menu(utils, game->death);
     // if (utils->settings == true)
     //     settings_menu(utils, game->settings);

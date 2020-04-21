@@ -13,6 +13,7 @@ int init_game_next(game_t *game, char **av)
         || !game->play || !game->map || !game->inv || !game->dungeon ||
         !game->select || !game->score)
         return 1;
+    init_settings(game);
     init_startmenu(game->startmenu);
     init_pausemenu(game);
     if (init_achivement(game->achiv) || init_map(game->map) ||
@@ -42,6 +43,7 @@ int init_game(game_t *game, char **av)
     game->pnj = malloc(sizeof(pnj_t));
     game->select = malloc(sizeof(select_t));
     game->score = malloc(sizeof(score_t));
+    game->settings = malloc(sizeof(settings_t));
     game->high = NULL;
     if (init_game_next(game, av) == 1)
         return 1;
