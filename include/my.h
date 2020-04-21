@@ -31,6 +31,7 @@
 #include "ancient.h"
 #include "selection.h"
 #include "highscores.h"
+#include "food.h"
 
 #ifndef READ_SIZE
 #define READ_SIZE 4096
@@ -62,8 +63,8 @@ char **map_generator(void);
 int init_map(map_t *map);
 void printing_map(game_t *game);
 void print_minimap(game_t *game);
-int check_map(play_t *play, keys_t *keys, enemy_t *ene);
-int check_map_next(play_t *play, keys_t *keys, enemy_t *ene);
+int check_map(play_t *play, game_t *);
+int check_map_next(play_t *play, game_t *);
 void check_mini_next(char a, utils_t *utils, map_t *map, sfVector2f pos);
 char **put_donjon(char **tab);
 
@@ -94,6 +95,10 @@ int init_achivement(achiv_t *);
 void enemy_move(game_t *, enemy_t *, sfVector2f);
 void init_enemy(enemy_t **, size_t);
 void draw_enemys(utils_t *, enemy_t *);
+
+/* FOOD */
+int init_food(food_t **);
+void draw_food(utils_t *, food_t *);
 
 /* KEYS */
 void init_keys(keys_t **);

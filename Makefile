@@ -37,6 +37,9 @@ MAP		= 	src/map/map_generator/map_generator.c	\
 ENEMY 	= 	src/enemy/draw_enemys.c 	\
 			src/enemy/init_enemy.c 		\
 			src/enemy/move_enemy.c 		\
+		
+FOOD	= 	src/food/init_food.c 		\
+			src/food/draw_food.c 		\
 
 ANCIENT = 	src/ancient/do_interaction.c 	\
 			src/ancient/draw_ancient.c 		\
@@ -93,6 +96,7 @@ SRCS	= 	src/main.c 							\
 			$(SELECTION)						\
 			$(SCORE)							\
 			$(HIGHSCORE)						\
+			$(FOOD) 							\
 
 OBJS	= $(SRCS:.c=.o)
 

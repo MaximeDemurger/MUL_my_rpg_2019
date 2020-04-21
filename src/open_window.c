@@ -14,6 +14,7 @@ sfVector2f player_pos)
 {
     if (utils->in_game == true) {
         printing_map(game);
+        draw_food(utils, game->food);
         draw_player(game->play, game->utils, game);
         draw_enemys(utils, game->ene);
         enemy_move(game, game->ene, player_pos);
@@ -62,9 +63,10 @@ int open_window(utils_t *utils, game_t *game)
 {
     game->key = NULL;
     game->ene = NULL;
+    game->food = NULL;
+    init_food(&game->food);
     init_keys(&game->key);
-    init_enemy(&game->ene, rand() % 4);
-    //init_enemy(&game->ene, 5);
+    init_enemy(&game->ene, rand() % 5);
     get_path(game->map->map_pars, game->map);
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);

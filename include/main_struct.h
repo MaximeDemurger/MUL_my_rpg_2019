@@ -31,6 +31,7 @@ typedef struct game_s {
     struct select_s *select;
     struct score_s *score;
     struct high_s *high;
+    struct food_s *food;
     struct settings_s *settings;
 } game_t;
 
