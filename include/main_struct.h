@@ -80,6 +80,8 @@ typedef struct utils_s {
     int heart;
     float width;
     float height;
+    bool new_high;
+    char *current_high;
 } utils_t;
 
 #endif /* !MAIN_STRUCT */

@@ -48,6 +48,7 @@ int init_selection(select_t *);
 /* HIGHSCORE */
 int get_high_scores(high_t *);
 int add_new_score(high_t *, char const *);
+int is_highscore(high_t *, char const *);
 
 /* start menu */
 int display_startmenu(utils_t *utils, startmenu_t *startmenu);
@@ -127,6 +128,7 @@ char **my_str_to_word_array(char const *str, char separator);
 char *my_itoa(int nb);
 int calc_int_len(int nb);
 int my_atoi(char const *);
+int my_int_cmp(char const *, char const *);
 
 /*player*/
 int dungeon_pos(play_t *play, map_t *map);

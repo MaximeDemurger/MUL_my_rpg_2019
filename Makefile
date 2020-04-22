@@ -55,6 +55,7 @@ ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 
 HIGHSCORE = 	src/highscore/add_score.c 			\
 				src/highscore/get_high_scores.c 	\
+				src/highscore/is_highscore.c 		\
 
 MY 	= 		src/my/convert.c 					\
 			src/my/my_strdup.c					\
@@ -64,6 +65,7 @@ MY 	= 		src/my/convert.c 					\
 			src/my/my_str_to_word_array.c		\
 			src/my/convert_int_to_string.c 		\
 			src/my/my_atoi.c 					\
+			src/my/my_int_cmp.c 				\
 
 PLAYER =	src/player/player_move.c 			\
 			src/player/move_rect.c 				\

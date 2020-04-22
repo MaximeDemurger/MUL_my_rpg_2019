@@ -50,6 +50,5 @@ int get_high_scores(high_t *high)
     }
     my_rev_list(&high);
     fclose(stream);
-    //add_new_score(high, "272\n");
     return 0;
 }

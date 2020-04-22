@@ -78,7 +78,7 @@ int open_window(utils_t *utils, game_t *game)
     while (sfRenderWindow_isOpen(utils->window)) {
         navigation_controller(utils, game);
         capture_events(utils, game);
-        if (utils->heart <= 0) utils->death = true;
+        if (game->play->life <= 0) utils->death = true;
         sfRenderWindow_display(utils->window);
         sfRenderWindow_clear(utils->window, sfBlack);
     }
