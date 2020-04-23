@@ -167,5 +167,6 @@ void drag(game_t *game);
 int highlight_settings_button(game_t *game);
 int display_settings(game_t *game);
 int display_settings_button(game_t *game);
+int modify_sound(game_t *game);
 
 #endif /* !PROTO */
