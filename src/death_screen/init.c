@@ -9,5 +9,5 @@
 
 int init_death(game_t *game)
 {
-    
+    return 0;
 }

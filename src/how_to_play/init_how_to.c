@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void event_how_to(utils_t *utils, game_t *game)
+void event_how_to(utils_t *utils)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(utils->window);
 
@@ -22,7 +22,7 @@ void event_how_to(utils_t *utils, game_t *game)
 
 int display_how_to(game_t *game)
 {
-    event_how_to(game->utils, game);
+    event_how_to(game->utils);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->how_to->how_to_sprite, NULL);
     return 0;
