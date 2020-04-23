@@ -29,7 +29,6 @@ int create_texture_attack(play_t *play, utils_t *utils)
 
 int attack_enemis(play_t *play, utils_t *utils, enemy_t *ene)
 {
-    enemy_t *tmp = ene;
     sfVector2f pos = {play->x_play - 85, play->y_play - 90};
     sfVector2f scale = {0.5, 0.5};
 
@@ -37,11 +36,11 @@ int attack_enemis(play_t *play, utils_t *utils, enemy_t *ene)
     sfSprite_setPosition(play->attack->sprite_attack, pos);
     sfRenderWindow_drawSprite(utils->window, play->attack->sprite_attack,
         NULL);
-    while (tmp) {
-        if (enemy_inrange(tmp, (float)play->x_play, (float)play->y_play)) {
-            tmp->heart -= 25;
+    while (ene) {
+        if (enemy_inrange(ene, (float)play->x_play, (float)play->y_play)) {
+            ene->heart -= 25;
         }
-        tmp = tmp->next;
+        ene = ene->next;
     }
     return 0;
 }

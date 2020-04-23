@@ -96,6 +96,7 @@ int init_achivement(achiv_t *);
 void enemy_move(game_t *, enemy_t *, sfVector2f);
 void init_enemy(enemy_t **, size_t);
 void draw_enemys(utils_t *, enemy_t *);
+void kill_enemys(enemy_t **, achiv_t *);
 
 /* FOOD */
 int init_food(food_t **);
