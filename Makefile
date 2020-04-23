@@ -55,7 +55,7 @@ ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 
 HIGHSCORE = 	src/highscore/add_score.c 			\
 				src/highscore/get_high_scores.c 	\
-				src/highscore/is_highscore.c 		\
+				src/highscore/final_score.c 		\
 
 MY 	= 		src/my/convert.c 					\
 			src/my/my_strdup.c					\
