@@ -174,4 +174,7 @@ int modify_sound(game_t *game);
 int init_how_to(howto_t *how_to);
 int display_how_to(game_t *game);
 
+int init_death(game_t *game);
+int display_death(game_t *game);
+
 #endif /* !PROTO */

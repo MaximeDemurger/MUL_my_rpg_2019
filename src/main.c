@@ -45,6 +45,7 @@ int init_game(game_t *game, char **av)
     game->score = malloc(sizeof(score_t));
     game->settings = malloc(sizeof(settings_t));
     game->how_to = malloc(sizeof(howto_t));
+    game->death_screen = malloc(sizeof(death_screen_t));
     game->high = NULL;
     if (init_game_next(game, av) == 1)
         return 1;

@@ -45,9 +45,8 @@ sfVector2f player_pos)
         display_pausemenu(game);
     if (utils->in_settings == true)
         display_settings(game);
-    //     death_menu(utils, game->death);
-    // if (utils->settings == true)
-    //     settings_menu(utils, game->settings);
+    if (utils->death)
+        display_death(game);
 }
 
 void navigation_controller(utils_t *utils, game_t *game)
