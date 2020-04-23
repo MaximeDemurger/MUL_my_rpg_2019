@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void event_how_to(utils_t *utils)
+void event_how_to(utils_t *utils, game_t *game)
 {
     sfVector2i pos = sfMouse_getPositionRenderWindow(utils->window);
 
@@ -22,7 +22,7 @@ void event_how_to(utils_t *utils)
 
 int display_how_to(game_t *game)
 {
-    event_how_to(game->utils);
+    event_how_to(game->utils, game);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->how_to->how_to_sprite, NULL);
     return 0;
@@ -36,8 +36,13 @@ int init_how_to(howto_t *how_to)
     how_to->how_to_sprite = sfSprite_create();
     how_to->how_to_texture = sfTexture_createFromFile
                                     ("./utils/imgs/book.png", NULL);
+    how_to->background_sprite = sfSprite_create();
+    how_to->background_texture =
+        sfTexture_createFromFile("./utils/imgs/white.png", NULL);
     sfSprite_setTexture(how_to->how_to_sprite,
                         how_to->how_to_texture, sfTrue);
+    sfSprite_setTexture(how_to->background_sprite,
+                        how_to->background_texture, sfTrue);
     sfSprite_setScale(how_to->how_to_sprite, scale);
     sfSprite_setPosition(how_to->how_to_sprite, pos);
     return 0;

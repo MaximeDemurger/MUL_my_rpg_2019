@@ -75,6 +75,7 @@ PLAYER =	src/player/player_move.c 			\
 			src/player/attack_player.c			\
 
 HOW_TO =	src/how_to_play/init_how_to.c 		\
+			src/how_to_play/print_how_to.c 		\
 
 SCORE = 	src/score_game/init_score_game.c	\
 			src/score_game/score.c				\

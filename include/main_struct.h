@@ -89,9 +89,10 @@ typedef struct utils_s {
 }utils_t;
 
 typedef struct howto_s {
-    sfTexture *how_to_texture_highlight;
     sfTexture *how_to_texture;
     sfSprite *how_to_sprite;
+    sfTexture *background_texture;
+    sfSprite *background_sprite;
 }howto_t;
 
 #endif /* !MAIN_STRUCT */

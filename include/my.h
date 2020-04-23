@@ -173,5 +173,7 @@ int modify_sound(game_t *game);
 /*how_to*/
 int init_how_to(howto_t *how_to);
 int display_how_to(game_t *game);
+int display_background_how_to(game_t *game);
+int print_how_to(game_t *game);
 
 #endif /* !PROTO */
