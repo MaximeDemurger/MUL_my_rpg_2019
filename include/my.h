@@ -160,5 +160,10 @@ int update_score(game_t *game);
 int init_settings(game_t *game);
 int display_settings_button(game_t *game);
 int display_settings(game_t *game);
+void event_sound_bar(game_t *game);
+void drag(game_t *game);
+int highlight_settings_button(game_t *game);
+int display_settings(game_t *game);
+int display_settings_button(game_t *game);
 
 #endif /* !PROTO */
