@@ -20,7 +20,7 @@ int init_game_next(game_t *game, char **av)
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)
         || score(game) || get_high_scores(game->high) ||
-        init_dungeon(game->dungeon))
+        init_dungeon(game->dungeon) || init_how_to(game->how_to))
         return 1;
     create_texture_attack(game->play, game->utils);
     game->utils->in_start = true;
@@ -44,6 +44,7 @@ int init_game(game_t *game, char **av)
     game->select = malloc(sizeof(select_t));
     game->score = malloc(sizeof(score_t));
     game->settings = malloc(sizeof(settings_t));
+    game->how_to = malloc(sizeof(how_to_t));
     game->high = NULL;
     if (init_game_next(game, av) == 1)
         return 1;
