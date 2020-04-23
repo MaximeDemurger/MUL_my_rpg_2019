@@ -25,7 +25,7 @@ void event_sound_bar(game_t *game)
     sfVector2f temp = {0, 0};
 
     if (game->utils->event.type == sfEvtMouseButtonPressed &&
-            (pos.x >= sprite_pos.x - 50 && pos.x <= sprite_pos.x + 50) &&
+            (pos.x >= sprite_pos.x - 70 && pos.x <= sprite_pos.x + 70) &&
             (pos.y >= 526 && pos.y <= 590) && game->settings->is_dragging == false) {
         game->settings->is_dragging = true;
     }

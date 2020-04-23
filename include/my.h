@@ -91,6 +91,7 @@ void not_talked(utils_t *, achiv_t *);
 void draw_talked(utils_t *, achiv_t *);
 void check_last_indic(utils_t *, achiv_t *);
 int init_achivement(achiv_t *);
+void all_achivs(achiv_t *, dungeon_t *);
 
 /* ENEMYS */
 void enemy_move(game_t *, enemy_t *, sfVector2f);

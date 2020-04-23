@@ -28,6 +28,7 @@ sfVector2f player_pos)
         display_heart(game->play, game->utils);
         display_how_to(game);
         display_settings_button(game);
+        all_achivs(game->achiv, game->dungeon);
         if (game->map->open_map == true)
             print_minimap(game);
         if (game->play->attack_number >= 1) {
