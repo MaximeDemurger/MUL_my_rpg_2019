@@ -54,6 +54,7 @@ typedef struct settings_s {
     sfSprite *bar_sprite;
     sfTexture *circle_texture;
     sfTexture *bar_texture;
+    bool is_dragging;
 } settings_t;
 
 typedef struct pausemenu_s {
