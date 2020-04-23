@@ -74,6 +74,8 @@ PLAYER =	src/player/player_move.c 			\
 			src/player/player_remove_life.c		\
 			src/player/attack_player.c			\
 
+HOW_TO =	src/how_to_play/init_how_to.c 		\
+
 SCORE = 	src/score_game/init_score_game.c	\
 			src/score_game/score.c				\
 
@@ -106,6 +108,7 @@ SRCS	= 	src/main.c 							\
 			$(SCORE)							\
 			$(HIGHSCORE)						\
 			$(FOOD) 							\
+			$(HOW_TO)							\
 
 OBJS	= $(SRCS:.c=.o)
 

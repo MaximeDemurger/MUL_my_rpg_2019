@@ -158,6 +158,7 @@ int display_score(game_t *game);
 int score(game_t *game);
 int update_score(game_t *game);
 
+/*settings*/
 int init_settings(game_t *game);
 int display_settings_button(game_t *game);
 int display_settings(game_t *game);
@@ -168,5 +169,9 @@ int highlight_settings_button(game_t *game);
 int display_settings(game_t *game);
 int display_settings_button(game_t *game);
 int modify_sound(game_t *game);
+
+/*how_to*/
+int init_how_to(howto_t *how_to);
+int display_how_to(game_t *game);
 
 #endif /* !PROTO */
