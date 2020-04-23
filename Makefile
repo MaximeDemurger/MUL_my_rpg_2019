@@ -75,6 +75,8 @@ PLAYER =	src/player/player_move.c 			\
 			src/player/player_remove_life.c		\
 			src/player/attack_player.c			\
 
+HOW_TO =	src/how_to_play/init_how_to.c 		\
+
 SCORE = 	src/score_game/init_score_game.c	\
 			src/score_game/score.c				\
 
@@ -90,7 +92,9 @@ SRCS	= 	src/main.c 							\
 			src/settings/init.c           		\
 			src/settings/display.c 				\
 			src/settings/drag_sound.c           \
-			src/settings/sound.c           \
+			src/settings/sound.c           		\
+			src/death_screen/display.c 			\
+			src/death_screen/init.c 			\
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\
@@ -105,6 +109,7 @@ SRCS	= 	src/main.c 							\
 			$(SCORE)							\
 			$(HIGHSCORE)						\
 			$(FOOD) 							\
+			$(HOW_TO)							\
 
 OBJS	= $(SRCS:.c=.o)
 

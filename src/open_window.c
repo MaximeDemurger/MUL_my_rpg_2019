@@ -26,6 +26,7 @@ sfVector2f player_pos)
         draw_inventory(utils, game->inv, game->achiv);
         display_score(game);
         display_heart(game->play, game->utils);
+        display_how_to(game);
         display_settings_button(game);
         all_achivs(game->achiv, game->dungeon);
         if (game->map->open_map == true)

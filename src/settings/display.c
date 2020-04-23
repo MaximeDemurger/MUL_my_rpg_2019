@@ -35,7 +35,7 @@ int display_settings(game_t *game)
 int display_settings_button(game_t *game)
 {
     highlight_settings_button(game);
-    event_settings(game->utils);  
+    event_settings(game->utils);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->settings_sprite, NULL);
 }
