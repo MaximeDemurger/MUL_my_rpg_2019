@@ -161,6 +161,7 @@ int init_settings(game_t *game);
 int display_settings_button(game_t *game);
 int display_settings(game_t *game);
 void event_sound_bar(game_t *game);
+void event_settings(utils_t *utils);
 void drag(game_t *game);
 int highlight_settings_button(game_t *game);
 int display_settings(game_t *game);
