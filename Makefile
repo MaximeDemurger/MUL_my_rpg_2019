@@ -89,7 +89,9 @@ SRCS	= 	src/main.c 							\
 			src/settings/init.c           		\
 			src/settings/display.c 				\
 			src/settings/drag_sound.c           \
-			src/settings/sound.c           \
+			src/settings/sound.c           		\
+			src/death_screen/display.c 			\
+			src/death_screen/init.c 			\
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\
