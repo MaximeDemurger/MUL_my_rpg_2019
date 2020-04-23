@@ -16,6 +16,9 @@ int init_game_next(game_t *game, char **av)
     init_settings(game);
     init_startmenu(game->startmenu);
     init_pausemenu(game);
+    init_text_how_to(game);
+    how_to_escape_button(game);
+    keybord_key_button(game);
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)

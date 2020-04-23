@@ -37,6 +37,7 @@ int init_settings_next(game_t *game)
     sfSprite_setTexture(game->settings->circle_sprite,
                         game->settings->circle_texture, sfTrue);
     sfSprite_setScale(game->settings->settings_sprite, scale);
+    return 0;
 }
 
 int init_settings(game_t *game)
@@ -58,4 +59,5 @@ int init_settings(game_t *game)
     sfSprite_setPosition(game->settings->bar_sprite, pos_2);
     sfSprite_setPosition(game->settings->circle_sprite, pos_3);
     sfSprite_setPosition(game->settings->settings_sprite, pos);
+    return 0;
 }

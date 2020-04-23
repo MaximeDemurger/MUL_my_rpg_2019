@@ -98,6 +98,16 @@ typedef struct howto_s {
     sfSprite *how_to_sprite;
     sfTexture *background_texture;
     sfSprite *background_sprite;
+    sfFont *font;
+    sfText *text;
+    sfTexture *esc_texture;
+    sfSprite *esc_sprite;
+    sfFont *font_esc;
+    sfText *text_esc;
+    sfFont *font_key;
+    sfText *text_key;
+    sfTexture *key_texture;
+    sfSprite *key_sprite;
 }howto_t;
 
 #endif /* !MAIN_STRUCT */
