@@ -34,6 +34,7 @@ typedef struct game_s {
     struct food_s *food;
     struct settings_s *settings;
     struct howto_s *how_to;
+    struct death_screen_s *death_screen;
 } game_t;
 
 typedef struct startmenu_s {
@@ -57,6 +58,10 @@ typedef struct settings_s {
     sfTexture *bar_texture;
     bool is_dragging;
 } settings_t;
+
+typedef struct death_screen_s {
+    sfText *death_text;
+} death_screen_t;
 
 typedef struct pausemenu_s {
     sfSprite *background_sprite;

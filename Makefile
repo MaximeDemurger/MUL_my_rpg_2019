@@ -53,6 +53,7 @@ SELECTION = 	src/lvl_selection/init_selection.c 		\
 ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 				src/achievement/draw_indicators.c 	\
 				src/achievement/init_achivement.c 	\
+				src/achievement/all_achiv.c 		\
 
 HIGHSCORE = 	src/highscore/add_score.c 			\
 				src/highscore/get_high_scores.c 	\
@@ -92,7 +93,9 @@ SRCS	= 	src/main.c 							\
 			src/settings/init.c           		\
 			src/settings/display.c 				\
 			src/settings/drag_sound.c           \
-			src/settings/sound.c           \
+			src/settings/sound.c           		\
+			src/death_screen/display.c 			\
+			src/death_screen/init.c 			\
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\

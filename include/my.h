@@ -91,6 +91,7 @@ void not_talked(utils_t *, achiv_t *);
 void draw_talked(utils_t *, achiv_t *);
 void check_last_indic(utils_t *, achiv_t *);
 int init_achivement(achiv_t *);
+void all_achivs(achiv_t *, dungeon_t *);
 
 /* ENEMYS */
 void enemy_move(game_t *, enemy_t *, sfVector2f);
@@ -175,5 +176,8 @@ int init_how_to(howto_t *how_to);
 int display_how_to(game_t *game);
 int display_background_how_to(game_t *game);
 int print_how_to(game_t *game);
+
+int init_death(game_t *game);
+int display_death(game_t *game);
 
 #endif /* !PROTO */
