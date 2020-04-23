@@ -47,10 +47,7 @@ sfVector2f player_pos)
     if (utils->in_settings == true)
         display_settings(game);
     if (game->utils->in_how_to == true)
-            display_background_how_to(game);
-    //     death_menu(utils, game->death);
-    // if (utils->settings == true)
-    //     settings_menu(utils, game->settings);
+        display_background_how_to(game);
     if (utils->death)
         display_death(game);
 }
