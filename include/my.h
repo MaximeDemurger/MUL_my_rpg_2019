@@ -133,7 +133,7 @@ int my_int_cmp(char const *, char const *);
 
 /*player*/
 int dungeon_pos(play_t *play, map_t *map);
-int player_move(play_t *play, utils_t *utils, map_t *map);
+int player_move(play_t *play, utils_t *utils, map_t *map, game_t *game);
 int movement_player_x(play_t *play, utils_t *utils, map_t *map);
 int movement_player_y(play_t *play, utils_t *utils, map_t *map);
 void move_rect_down(play_t *play);

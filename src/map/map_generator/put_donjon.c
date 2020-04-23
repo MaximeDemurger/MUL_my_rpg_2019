@@ -11,6 +11,15 @@
 #include <fcntl.h>
 #include "my.h"
 
+int give_values(int *random_col, int *random_line, int *secondcol, int *col)
+{
+    if (*random_col == 0 && *random_line == 0)
+        *random_col += 1;
+    *col = *random_col * 16 + 5;
+    *secondcol = *col;
+    return 0;
+}
+
 //too long function
 char **put_donjon(char **tab)
 {
@@ -21,20 +30,15 @@ char **put_donjon(char **tab)
     int col = 0;
     int secondcol;
 
-    if (random_col == 0 && random_line == 0)
-        random_col++;
-    col = random_col * 16 + 5;
-    secondcol = col;
+    give_values(&random_col, &random_line, &secondcol, &col);
     while (line < 4 + secondline) {
         col = random_col * 16 + 5;
         while (col < 4 + secondcol) {
             if (line == random_line * 8 + 2 && col == random_col * 16 + 5) {
                 tab[line][col - 1] = 'S';
                 tab[line - 1][col - 1] = 'E';
-            }
-            tab[line][col++] = 'D';
-        }
-        line++;
+            } tab[line][col++] = 'D';
+        } line++;
     }
     return tab;
 }

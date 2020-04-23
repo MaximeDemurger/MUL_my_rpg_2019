@@ -12,6 +12,7 @@ typedef struct dungeon_s {
     sfSprite *ground;
     sfTexture *text_ground;
     int all_achiv;
+    int in_it;
 } dungeon_t;
 
 #endif /* !DUNGEON_H */

@@ -49,6 +49,7 @@ void capture_event_next(utils_t *utils, game_t *game)
         && game->dungeon->all_achiv == 1) {
         game->utils->in_dungeon = true;
         game->utils->in_game = false;
+        game->dungeon->in_it = 1;
     }
 }
 
@@ -62,7 +63,7 @@ void capture_events(utils_t *utils, game_t *game)
             utils->in_game == true)
             utils->in_pause = true;
         open_mini_map(game);
-        player_move(game->play, game->utils, game->map);
+        player_move(game->play, game->utils, game->map, game);
         capture_event_next(utils, game);
     }
 }

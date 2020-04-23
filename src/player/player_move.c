@@ -51,7 +51,7 @@ int movement_player_x(play_t *play, utils_t *utils, map_t *map)
     return 0;
 }
 
-int player_move(play_t *play, utils_t *utils, map_t *map)
+int player_move(play_t *play, utils_t *utils, map_t *map, game_t *game)
 {
     sfVector2f scale = {0.2, 0.2};
     sfTime time = sfClock_getElapsedTime(play->clock);
@@ -60,7 +60,7 @@ int player_move(play_t *play, utils_t *utils, map_t *map)
     sfSprite_setScale(play->player, scale);
     sfRectangleShape *sfRectangleShape_create(void);
     sfSprite_setTextureRect(play->player, play->rect);
-    if (seconds > 0.01) {
+    if (seconds > 0.01 && game->dungeon->in_it == 0) {
         movement_player_x(play, utils, map);
         movement_player_y(play, utils, map);
     }
