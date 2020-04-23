@@ -181,5 +181,11 @@ int init_death(game_t *game);
 int display_death(game_t *game);
 int how_to_escape_button(game_t *game);
 int keybord_key_button(game_t *game);
+int key_p_button(game_t *game);
+int keybord_key_text(game_t *game);
+int keybord_m_text(game_t *game);
+int key_p_button(game_t *game);
+int key_m_button(game_t *game);
+int keybord_m_text(game_t *game);
 
 #endif /* !PROTO */
