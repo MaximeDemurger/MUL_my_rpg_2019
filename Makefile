@@ -53,6 +53,7 @@ SELECTION = 	src/lvl_selection/init_selection.c 		\
 ACHIVEMENT 	= 	src/achievement/draw_achivement.c 	\
 				src/achievement/draw_indicators.c 	\
 				src/achievement/init_achivement.c 	\
+				src/achievement/all_achiv.c 		\
 
 HIGHSCORE = 	src/highscore/add_score.c 			\
 				src/highscore/get_high_scores.c 	\
