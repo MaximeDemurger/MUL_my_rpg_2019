@@ -28,7 +28,7 @@ int display_how_to(game_t *game)
     return 0;
 }
 
-int init_how_to(how_to_t *how_to)
+int init_how_to(howto_t *how_to)
 {
     sfVector2f pos = {1700, 35};
     sfVector2f scale = {0.2, 0.2};

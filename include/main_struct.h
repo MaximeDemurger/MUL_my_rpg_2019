@@ -33,7 +33,7 @@ typedef struct game_s {
     struct high_s *high;
     struct food_s *food;
     struct settings_s *settings;
-    struct how_to_s *how_to;
+    struct howto_s *how_to;
 } game_t;
 
 typedef struct startmenu_s {
@@ -80,17 +80,18 @@ typedef struct utils_s {
     bool lvl_selection;
     bool in_how_to;
     bool in_dungeon;
+    sfMusic *back_music;
     int heart;
     float width;
     float height;
     bool new_high;
     char *current_high;
-} utils_t;
+}utils_t;
 
-typedef struct how_to_s {
+typedef struct howto_s {
     sfTexture *how_to_texture_highlight;
     sfTexture *how_to_texture;
     sfSprite *how_to_sprite;
-} how_to_t;
+}howto_t;
 
 #endif /* !MAIN_STRUCT */

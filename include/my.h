@@ -96,6 +96,7 @@ int init_achivement(achiv_t *);
 void enemy_move(game_t *, enemy_t *, sfVector2f);
 void init_enemy(enemy_t **, size_t);
 void draw_enemys(utils_t *, enemy_t *);
+void kill_enemys(enemy_t **, achiv_t *);
 
 /* FOOD */
 int init_food(food_t **);
@@ -167,9 +168,10 @@ void drag(game_t *game);
 int highlight_settings_button(game_t *game);
 int display_settings(game_t *game);
 int display_settings_button(game_t *game);
+int modify_sound(game_t *game);
 
 /*how_to*/
-int init_how_to(how_to_t *how_to);
+int init_how_to(howto_t *how_to);
 int display_how_to(game_t *game);
 
 #endif /* !PROTO */

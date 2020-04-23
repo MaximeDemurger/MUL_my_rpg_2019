@@ -37,6 +37,7 @@ MAP		= 	src/map/map_generator/map_generator.c	\
 ENEMY 	= 	src/enemy/draw_enemys.c 	\
 			src/enemy/init_enemy.c 		\
 			src/enemy/move_enemy.c 		\
+			src/enemy/kill_enemys.c 	\
 
 FOOD	= 	src/food/init_food.c 		\
 			src/food/draw_food.c 		\
@@ -90,6 +91,7 @@ SRCS	= 	src/main.c 							\
 			src/settings/init.c           		\
 			src/settings/display.c 				\
 			src/settings/drag_sound.c           \
+			src/settings/sound.c           \
 			$(MAP)								\
 			$(ENEMY)							\
 			$(MY)								\
