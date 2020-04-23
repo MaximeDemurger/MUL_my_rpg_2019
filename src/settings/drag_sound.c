@@ -12,8 +12,10 @@ void drag(game_t *game)
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->utils->window);
     sfVector2f pos = {mouse.x, 520};
 
-    if (mouse.x < 1058 && mouse.x > 740)
-        sfSprite_setPosition(game->settings->circle_sprite, pos); 
+    if (mouse.x < 1058 && mouse.x > 740) {
+        sfSprite_setPosition(game->settings->circle_sprite, pos);
+        modify_sound(game);
+    }
 }
 
 void event_sound_bar(game_t *game)
