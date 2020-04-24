@@ -118,8 +118,14 @@ typedef struct howto_s {
     sfSprite *m_sprite;
     sfFont *font_a;
     sfText *text_a;
+    sfFont *font_rules;
+    sfText *text_rules;
     sfTexture *a_texture;
     sfSprite *a_sprite;
+    sfFont *font_rules_first;
+    sfText *text_rules_first;
+    sfFont *font_rules_second;
+    sfText *text_rules_second;
 }howto_t;
 
 #endif /* !MAIN_STRUCT */

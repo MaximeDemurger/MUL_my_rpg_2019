@@ -25,6 +25,18 @@ int init_text_how_to(game_t *game)
     return 0;
 }
 
+int display_background_how_to_next(game_t *game)
+{
+    sfRenderWindow_drawText(game->utils->window, game->how_to->text_a, NULL);
+    sfRenderWindow_drawText(game->utils->window, game->how_to->text_rules,
+        NULL);
+    sfRenderWindow_drawText(game->utils->window,
+        game->how_to->text_rules_first, NULL);
+    sfRenderWindow_drawText(game->utils->window,
+        game->how_to->text_rules_second, NULL);
+    return 0;
+}
+
 int display_background_how_to(game_t *game)
 {
     sfRenderWindow_drawSprite(game->utils->window,
@@ -44,6 +56,6 @@ int display_background_how_to(game_t *game)
     sfRenderWindow_drawText(game->utils->window, game->how_to->text_m, NULL);
     sfRenderWindow_drawSprite(game->utils->window, game->how_to->a_sprite,
                             NULL);
-    sfRenderWindow_drawText(game->utils->window, game->how_to->text_a, NULL);
+    display_background_how_to_next(game);
     return 0;
 }

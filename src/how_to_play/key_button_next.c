@@ -7,6 +7,22 @@
 
 #include "my.h"
 
+int rules_text(game_t *game)
+{
+    sfVector2f pos_text = {30, 650};
+
+    game->how_to->text_rules = sfText_create();
+    game->how_to->font_rules = sfFont_createFromFile("./utils/font/horrendo.ttf");
+    if (!game->how_to->text_rules || !game->how_to->font_rules)
+        return 84;
+    sfText_setFont(game->how_to->text_rules, game->how_to->font_rules);
+    sfText_setCharacterSize(game->how_to->text_rules, 35);
+    sfText_setString(game->how_to->text_rules, "RULES :");
+    sfText_setPosition(game->how_to->text_rules, pos_text);
+    sfText_setColor(game->how_to->text_rules, sfBlack);
+    return 0;
+}
+
 int keybord_a_text(game_t *game)
 {
     sfVector2f pos_text = {130, 530};
