@@ -19,6 +19,8 @@ int init_how_to_play(game_t *game)
     key_p_button(game);
     keybord_m_text(game);
     key_m_button(game);
+    keybord_a_text(game);
+    key_a_button(game);
     return 0;
 }
 

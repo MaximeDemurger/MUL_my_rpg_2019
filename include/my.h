@@ -187,5 +187,7 @@ int keybord_m_text(game_t *game);
 int key_p_button(game_t *game);
 int key_m_button(game_t *game);
 int keybord_m_text(game_t *game);
+int key_a_button(game_t *game);
+int keybord_a_text(game_t *game);
 
 #endif /* !PROTO */

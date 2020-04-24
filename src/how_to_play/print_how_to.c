@@ -42,5 +42,8 @@ int display_background_how_to(game_t *game)
     sfRenderWindow_drawSprite(game->utils->window, game->how_to->m_sprite,
                             NULL);
     sfRenderWindow_drawText(game->utils->window, game->how_to->text_m, NULL);
+    sfRenderWindow_drawSprite(game->utils->window, game->how_to->a_sprite,
+                            NULL);
+    sfRenderWindow_drawText(game->utils->window, game->how_to->text_a, NULL);
     return 0;
 }
