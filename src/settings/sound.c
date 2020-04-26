@@ -13,9 +13,11 @@ int get_value_sound(game_t *game)
     int result = 0;
 
     result = pos.x - 800;
+    return 0;
 }
 
 int modify_sound(game_t *game)
 {
     int sound = get_value_sound(game);
+    return 0;
 }

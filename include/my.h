@@ -174,5 +174,23 @@ int modify_sound(game_t *game);
 /*how_to*/
 int init_how_to(howto_t *how_to);
 int display_how_to(game_t *game);
+int display_background_how_to(game_t *game);
+int print_how_to(game_t *game);
+int init_text_how_to(game_t *game);
+int init_death(game_t *game);
+int display_death(game_t *game);
+int how_to_escape_button(game_t *game);
+int keybord_key_button(game_t *game);
+int key_p_button(game_t *game);
+int keybord_key_text(game_t *game);
+int keybord_m_text(game_t *game);
+int key_p_button(game_t *game);
+int key_m_button(game_t *game);
+int keybord_m_text(game_t *game);
+int key_a_button(game_t *game);
+int keybord_a_text(game_t *game);
+int rules_two(game_t *game);
+int rules_one(game_t *game);
+int rules_text(game_t *game);
 
 #endif /* !PROTO */

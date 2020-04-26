@@ -36,8 +36,13 @@ int init_how_to(howto_t *how_to)
     how_to->how_to_sprite = sfSprite_create();
     how_to->how_to_texture = sfTexture_createFromFile
                                     ("./utils/imgs/book.png", NULL);
+    how_to->background_sprite = sfSprite_create();
+    how_to->background_texture =
+        sfTexture_createFromFile("./utils/imgs/white.png", NULL);
     sfSprite_setTexture(how_to->how_to_sprite,
                         how_to->how_to_texture, sfTrue);
+    sfSprite_setTexture(how_to->background_sprite,
+                        how_to->background_texture, sfTrue);
     sfSprite_setScale(how_to->how_to_sprite, scale);
     sfSprite_setPosition(how_to->how_to_sprite, pos);
     return 0;

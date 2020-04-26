@@ -11,7 +11,7 @@ int create_highlights(game_t *game)
 {
     game->pausemenu->main_texture_highlight = sfTexture_createFromFile
                             ("./utils/imgs/menu_button_highlight.png", NULL);
-    
+    return 0;
 }
 
 int display_highlight(game_t *game)
@@ -21,6 +21,7 @@ int display_highlight(game_t *game)
     display_highlight_start_pause(game->pausemenu, pos, game->startmenu);
     display_highlight_main_pause(game->pausemenu, pos, game->startmenu);
     display_highlight_quit_pause(game->pausemenu, pos, game->startmenu);
+    return 0;
 }
 
 int display_highlight_start_pause(pausemenu_t *pausemenu, sfVector2i pos, startmenu_t *startmenu)

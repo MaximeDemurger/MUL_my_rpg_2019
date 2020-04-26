@@ -7,15 +7,33 @@
 
 #include "my.h"
 
+int init_how_to_play(game_t *game)
+{
+    init_settings(game);
+    init_startmenu(game->startmenu);
+    init_pausemenu(game);
+    init_text_how_to(game);
+    how_to_escape_button(game);
+    keybord_key_button(game);
+    key_p_button(game);
+    key_p_button(game);
+    keybord_m_text(game);
+    key_m_button(game);
+    keybord_a_text(game);
+    key_a_button(game);
+    rules_text(game);
+    rules_one(game);
+    rules_two(game);
+    return 0;
+}
+
 int init_game_next(game_t *game, char **av)
 {
     if (!game->utils || !game->startmenu || !game->achiv || !game->pnj
         || !game->play || !game->map || !game->inv || !game->dungeon ||
         !game->select || !game->score)
         return 1;
-    init_settings(game);
-    init_startmenu(game->startmenu);
-    init_pausemenu(game);
+    init_how_to_play(game);
     if (init_achivement(game->achiv) || init_map(game->map) ||
         init_gameplay(game->play) || init_inventory(game->inv) ||
         init_ancient(game->pnj) || init_selection(game->select)
@@ -45,6 +63,7 @@ int init_game(game_t *game, char **av)
     game->score = malloc(sizeof(score_t));
     game->settings = malloc(sizeof(settings_t));
     game->how_to = malloc(sizeof(howto_t));
+    game->death_screen = malloc(sizeof(death_screen_t));
     game->high = NULL;
     if (init_game_next(game, av) == 1)
         return 1;

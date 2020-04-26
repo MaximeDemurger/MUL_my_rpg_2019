@@ -34,6 +34,7 @@ typedef struct game_s {
     struct food_s *food;
     struct settings_s *settings;
     struct howto_s *how_to;
+    struct death_screen_s *death_screen;
 } game_t;
 
 typedef struct startmenu_s {
@@ -57,6 +58,10 @@ typedef struct settings_s {
     sfTexture *bar_texture;
     bool is_dragging;
 } settings_t;
+
+typedef struct death_screen_s {
+    sfText *death_text;
+} death_screen_t;
 
 typedef struct pausemenu_s {
     sfSprite *background_sprite;
@@ -89,9 +94,38 @@ typedef struct utils_s {
 }utils_t;
 
 typedef struct howto_s {
-    sfTexture *how_to_texture_highlight;
     sfTexture *how_to_texture;
     sfSprite *how_to_sprite;
+    sfTexture *background_texture;
+    sfSprite *background_sprite;
+    sfFont *font;
+    sfText *text;
+    sfTexture *esc_texture;
+    sfSprite *esc_sprite;
+    sfFont *font_esc;
+    sfText *text_esc;
+    sfFont *font_key;
+    sfText *text_key;
+    sfTexture *key_texture;
+    sfSprite *key_sprite;
+    sfFont *font_p;
+    sfText *text_p;
+    sfTexture *p_texture;
+    sfSprite *p_sprite;
+    sfFont *font_m;
+    sfText *text_m;
+    sfTexture *m_texture;
+    sfSprite *m_sprite;
+    sfFont *font_a;
+    sfText *text_a;
+    sfFont *font_rules;
+    sfText *text_rules;
+    sfTexture *a_texture;
+    sfSprite *a_sprite;
+    sfFont *font_rules_first;
+    sfText *text_rules_first;
+    sfFont *font_rules_second;
+    sfText *text_rules_second;
 }howto_t;
 
 #endif /* !MAIN_STRUCT */

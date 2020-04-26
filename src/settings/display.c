@@ -19,6 +19,7 @@ int highlight_settings_button(game_t *game)
         sfSprite_setTexture(game->settings->settings_sprite,
                         game->settings->settings_texture, sfTrue);
     }
+    return 0;
 }
 
 int display_settings(game_t *game)
@@ -30,6 +31,7 @@ int display_settings(game_t *game)
     sfRenderWindow_drawSprite(game->utils->window,
                         game->settings->circle_sprite, NULL);
     event_sound_bar(game);
+    return 0;
 }
 
 int display_settings_button(game_t *game)
@@ -38,4 +40,5 @@ int display_settings_button(game_t *game)
     event_settings(game->utils);
     sfRenderWindow_drawSprite(game->utils->window,
                             game->settings->settings_sprite, NULL);
+    return 0;
 }
